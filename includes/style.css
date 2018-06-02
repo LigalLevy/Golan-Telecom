@@ -7,6 +7,7 @@
 
 body {
     background-color: #d9d9d9;
+    font-size: 13px;
 }
 
 header, nav, main, section, article ,footer {display:block;}
@@ -17,6 +18,7 @@ header, nav, main, section, article ,footer {display:block;}
     height: 5119px;
     margin: 0 auto 150px;
     background-color: white;
+    font-family: 'Arial', sans-serif;
 }
 
 .logo {
@@ -29,8 +31,15 @@ header, nav, main, section, article ,footer {display:block;}
 
 .lang {
     display: inline-block;
-    width: 51px;
+    width: 52px;
     height: 22px;
+    font-size: 0.846em;
+    text-align: center;
+    line-height: 22px;
+    color: #262262;
+    margin-top: 19px;
+    margin-bottom: 19px;
+    background-image: url(../images/langButton.png);
 }
 
 header {
@@ -47,15 +56,130 @@ nav {
     height: 188px;
     margin-right: 42px;
     position: fixed;
-    top: 171px;
+    z-index: 10;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul li a {
+    color: #262262;
+    font-size: 1.23em;
+    font-weight: bold;
+    padding-right: 16px;
 }
 
 nav > ul {
     list-style-type: none;
 }
 
+nav > ul > li {
+    width: 158px;
+    height: 34px;
+    line-height: 34px;
+    margin-bottom: 4px;
+    box-shadow: 2px 3px 20px 2px #cbcbcc;
+    display: inline-block;
+    background-color: white;
+}
+
+nav > ul > li:hover{
+    background-color: #3b4355;
+    color: #949495;
+}
+
+nav > ul > li > a:hover {
+
+}
+
+nav ul li p {
+    background-color: #cbcbcc;
+    width: 34px;
+    height: 34px;
+    display: inline-block;
+    margin-right: -41px;
+    float: right;
+    box-shadow: 2px 3px 20px 2px #cbcbcc;
+    border-radius: 19%;
+}
+
+nav ul li p:hover {
+    background-color: #3b4355;
+
+
+}
+
+nav ul li:first-child p{
+    background: #dededf url(../images/question-side.png) no-repeat;
+}
+
+nav ul li:nth-child(2) p{
+    background: #dededf url(../images/who-are-we-side.png) no-repeat;
+}
+
+nav ul li:nth-child(3) p{
+    background: #dededf url(../images/power-side.png) no-repeat;
+}
+
+nav ul li:nth-child(4) p{
+    background: #dededf url(../images/list-side.png) no-repeat;
+}
+
+nav ul li:nth-child(5) p{
+    background: url(../images/shtrudel-side.png) no-repeat;
+}
+
 aside {
     float: right;
+}
+
+.line {
+    background: url(../images/red-line.png);
+    display: inline-block;
+    width: 553px;
+    height: 48px;
+    position: relative;
+    right: 50px;
+    z-index: 32;
+    box-shadow: 1px 0px 20px 0px #858588;
+}
+
+.side-line {
+    background: url(../images/red-line-back.png);
+    display: block;
+    width: 64px;
+    height: 96px;
+    position: relative;
+    left: -64px;
+    z-index: 0;
+}
+
+.title-icon {
+    width: 113px;
+    height: 113px;
+    display: inline-block;
+    position: relative;
+    left: 503px;
+    border-radius: 15%;
+    box-shadow: 2px 3px 20px 0px #979798;
+}
+
+.boundary-line {
+    background: url(../images/line.png);
+    display: block;
+    width: 993px;
+    height: 11px;
+    position: relative;
+    right: 1px;
+    z-index: 0;
+}
+h4 {
+    line-height: 48px;
+    font-size: 1.538em;
+    direction: rtl;
+    color: white;
+    margin-right: 15px;
 }
 
 main {
@@ -68,13 +192,44 @@ main {
     height: 629px;
 }
 
+#golan-telecom-top .line { top: 76px; }
+
+#golan-telecom-top .side-line { top: 29px; }
+
+#golan-telecom-top .title-icon{
+    background-image: url(../images/phone.png);
+    top: -101px;
+    z-index: 10;
+}
+
 #what-we-do {
     height: 517px;
     background-color: #f0f0f0;
 }
 
+#what-we-do .line { top: 70px; }
+
+#what-we-do .side-line { top: 22px; }
+
+#what-we-do .title-icon{
+    background-image: url(../images/question.png);
+    top: -105px;
+    border-radius: 17%;
+    z-index: 10;
+}
+
 #who-are-we {
     height: 1004px;
+}
+
+#who-are-we .line { top: 75px; }
+
+#who-are-we .side-line { top: 27px; }
+
+#who-are-we .title-icon{
+    background-image: url(../images/whoarewe.png);
+    top: -103px;
+    z-index: 10;
 }
 
 #when-we-start {
@@ -82,8 +237,28 @@ main {
     background-color: #f0f0f0;
 }
 
+#when-we-start .line { top: 61px; }
+
+#when-we-start .side-line { top: 14px; }
+
+#when-we-start .title-icon{
+    background-image: url(../images/power.png);
+    top: -114px;
+    z-index: 10;
+}
+
 #careers {
     height: 1735px;
+}
+
+#careers .line { top: 74px; }
+
+#careers .side-line { top: 26px; }
+
+#careers .title-icon{
+    background-image: url(../images/list.png);
+    top: -104px;
+    z-index: 10;
 }
 
 #contact-us {
@@ -91,6 +266,14 @@ main {
     background-color: #f0f0f0;
 }
 
+#contact-us .line { top: 68px; }
 
+#contact-us .side-line { top: 20px; }
+
+#contact-us .title-icon{
+    background-image: url(../images/shtrudel.png);
+    top: -110px;
+    z-index: 10;
+}
 
 
