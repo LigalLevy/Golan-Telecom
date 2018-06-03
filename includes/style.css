@@ -188,8 +188,66 @@ main {
 }
 
 #golan-telecom-top {
-    width: 568px;
+    width: 619px;
     height: 629px;
+}
+
+#golan-telecom-top article {
+    width: 618px;
+    height: 472px;
+    position: relative;
+    bottom: 101px;
+    font-family: 'Rubik', sans-serif;
+}
+
+#golan-telecom-top article p:first-child{
+    font-size: 2.76em;
+    color: #262f43;
+    margin-top: 62px;
+    direction: rtl;
+
+}
+
+#golan-telecom-top article span{
+    color: #353535;
+    font-size: 1.076em;
+    margin-left: 31px;
+}
+
+#golan-telecom-top article p:nth-child(3){
+    font-size: 2.46em;
+    color: #ed1c24;
+    direction: rtl;
+    margin-top: 40px;
+    margin-bottom: 75px;
+}
+
+#golan-telecom-top article p:nth-child(4){
+    font-size: 1.692em;
+    color: #ed1c24;
+    direction: rtl;
+    position: relative;
+    right: 294px;
+}
+
+#golan-telecom-top article a{
+    padding: 10px 26px;
+    line-height: 46px;
+    border: 1px solid #ed1c24;
+    background-color: white;
+    color: #262f43;
+    font-size: 1.23em;
+    font-family: Arial;
+    font-weight: bold;
+    margin-left: 53px;
+    box-shadow: 2px 8px 20px 0px #b1b1b2;
+}
+
+#golan-telecom-top article p:nth-child(4) span{
+    font-size: 1.363em;
+    color: #ed1c24;
+    direction: rtl;
+
 }
 
 #golan-telecom-top .line { top: 76px; }
