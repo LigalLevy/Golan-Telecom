@@ -21,6 +21,10 @@ header, nav, main, section, article ,footer {display:block;}
     font-family: 'Arial', sans-serif;
 }
 
+.clear {
+    clear: both;
+}
+
 .logo {
     display: inline-block;
     height: 89px;
@@ -63,7 +67,7 @@ a {
     text-decoration: none;
 }
 
-ul li a {
+nav ul li a {
     color: #262262;
     font-size: 1.23em;
     font-weight: bold;
@@ -130,10 +134,6 @@ nav ul li:nth-child(5) p{
     background: url(../images/shtrudel-side.png) no-repeat;
 }
 
-aside {
-    float: right;
-}
-
 .line {
     background: url(../images/red-line.png);
     display: inline-block;
@@ -141,7 +141,7 @@ aside {
     height: 48px;
     position: relative;
     right: 50px;
-    z-index: 32;
+    z-index: 13;
     box-shadow: 1px 0px 20px 0px #858588;
 }
 
@@ -161,6 +161,7 @@ aside {
     display: inline-block;
     position: relative;
     left: 503px;
+    z-index: 12;
     border-radius: 15%;
     box-shadow: 2px 3px 20px 0px #979798;
 }
@@ -174,12 +175,149 @@ aside {
     right: 1px;
     z-index: 0;
 }
-h4 {
+
+h3 {
     line-height: 48px;
     font-size: 1.538em;
     direction: rtl;
     color: white;
     margin-right: 15px;
+}
+
+aside {
+    width: 226px;
+    height: 279px;
+    background: url(../images/news-back.png) no-repeat;
+    position: relative;
+    bottom: 206px;
+    right: 30px;
+    float: right;
+    direction: rtl;
+    padding-top: 29px;
+}
+
+aside h5 , aside a {
+    margin-right: 49px;
+    color: #656565;
+}
+
+aside h5:first-child {
+    background: url(../images/icon_rss.png) no-repeat right;
+    height: 32px;
+    line-height: 32px;
+    padding-right: 40px;
+}
+
+aside span:nth-child(2) {
+    display: block;
+    background: url(../images/grey-line-news.png);
+    width: 122px;
+    height: 1px;
+    margin: 8px auto;
+
+}
+
+aside h5:nth-child(3) {
+    background: url(../images/newspaper.png) no-repeat right;
+    height: 32px;
+    line-height: 32px;
+    padding-right: 40px;
+}
+
+aside > ul {
+    list-style-type: none;
+    margin-top: 9px;
+}
+
+aside > ul > li {
+    margin-bottom: 10px;
+}
+aside > ul > li > a {
+    margin-right: 52px;
+    color: #0e1b4a;
+    font-size: 0.923em;
+    text-decoration: underline;
+}
+
+aside > ul > li > a:hover {
+    color: #ed1c24;
+}
+
+.selected-article a{
+    font-weight: bold;
+    color: #ed1c24;
+}
+
+aside section {
+    background: url(../images/article-back.png) no-repeat;
+    width: 812px;
+    height: 410px;
+    display: none;
+    position: relative;
+    top: 47px;
+    right: 77px;
+    z-index: 15;
+}
+
+aside article {
+    width: 775px;
+    height: 410px;
+    direction: rtl;
+    z-index: 16;
+    padding-top: 46px;
+    padding-right: 30px;
+}
+
+aside h4 {
+    color: #252f41;
+    font-size: 1.1em;
+}
+aside p {
+    color: #616161;
+    font-size: 0.95em;
+}
+
+#close {
+    background: url(../images/close.png);
+    width: 26px;
+    height: 26px;
+    display: none;
+    position: relative;
+    top: 59px;
+    right: 66px;
+    border-radius: 25%;
+    box-shadow: 2px 3px 16px 0px #979798;
+}
+
+#article01 { display: none; }
+
+#article02 { display: none; }
+
+#article02 h4 , #article04 h4{
+    font-size: 1.3em;
+    text-align: center;
+    text-decoration: underline;
+}
+
+#article02 h6 {
+    font-size: 1em;
+    text-align: center;
+}
+
+#article03 {
+    width: 615px;
+    display: none;
+}
+
+#article04 {
+    width: 650px;
+    display: none;
+}
+
+#article04 h3 {
+    color: #ed1c24;
+    font-size: 1.85em;
+    text-align: center;
 }
 
 main {
@@ -188,7 +326,7 @@ main {
 }
 
 #golan-telecom-top {
-    width: 619px;
+    width: 68.51664985%;
     height: 629px;
 }
 
@@ -257,7 +395,6 @@ main {
 #golan-telecom-top .title-icon{
     background-image: url(../images/phone.png);
     top: -101px;
-    z-index: 10;
 }
 
 #what-we-do {
@@ -273,7 +410,7 @@ main {
     background-image: url(../images/question.png);
     top: -105px;
     border-radius: 17%;
-    z-index: 10;
+
 }
 
 #who-are-we {
@@ -287,7 +424,6 @@ main {
 #who-are-we .title-icon{
     background-image: url(../images/whoarewe.png);
     top: -103px;
-    z-index: 10;
 }
 
 #when-we-start {
@@ -302,7 +438,6 @@ main {
 #when-we-start .title-icon{
     background-image: url(../images/power.png);
     top: -114px;
-    z-index: 10;
 }
 
 #careers {
@@ -316,7 +451,6 @@ main {
 #careers .title-icon{
     background-image: url(../images/list.png);
     top: -104px;
-    z-index: 10;
 }
 
 #contact-us {
@@ -331,7 +465,6 @@ main {
 #contact-us .title-icon{
     background-image: url(../images/shtrudel.png);
     top: -110px;
-    z-index: 10;
 }
 
 
