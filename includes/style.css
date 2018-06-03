@@ -12,13 +12,28 @@ body {
 
 header, nav, main, section, article ,footer {display:block;}
 
-.wrapper {
-    max-width: 991px;
-    width: 100%;
-    height: 5119px;
-    margin: 0 auto 150px;
-    background-color: white;
-    font-family: 'Arial', sans-serif;
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+h3 {
+    line-height: 48px;
+    font-size: 1.538em;
+    direction: rtl;
+    color: white;
+    margin-right: 15px;
+}
+
+nav {
+    width: 199px;
+    height: 188px;
+    margin-right: 42px;
+    position: fixed;
+    z-index: 10;
 }
 
 .clear {
@@ -41,41 +56,36 @@ header, nav, main, section, article ,footer {display:block;}
     text-align: center;
     line-height: 22px;
     color: #262262;
-    margin-top: 19px;
-    margin-bottom: 19px;
+    margin: 19px 0;
     background-image: url(../images/langButton.png);
+}
+
+.wrapper {
+    max-width: 991px;
+    width: 100%;
+    height: 5119px;
+    margin: 0 auto 150px;
+    background-color: white;
+    font-family: 'Arial', sans-serif;
 }
 
 header {
     float: right;
-    width: 204px;
+    width: 20.585%;
     height: 337px;
     right: 207px;
     direction: rtl;
     margin-right: 41px;
 }
 
-nav {
-    width: 199px;
-    height: 188px;
-    margin-right: 42px;
-    position: fixed;
-    z-index: 10;
-}
 
-a {
-    text-decoration: none;
-}
+
 
 nav ul li a {
     color: #262262;
     font-size: 1.23em;
     font-weight: bold;
     padding-right: 16px;
-}
-
-nav > ul {
-    list-style-type: none;
 }
 
 nav > ul > li {
@@ -88,13 +98,16 @@ nav > ul > li {
     background-color: white;
 }
 
-nav > ul > li:hover{
+.selected-nav {
     background-color: #3b4355;
+}
+
+.selected-nav a {
     color: #949495;
 }
 
-nav > ul > li > a:hover {
-
+.selected-nav nav ul li:first-child p{
+    background: url(../images/question-hover.png) no-repeat;
 }
 
 nav ul li p {
@@ -106,12 +119,6 @@ nav ul li p {
     float: right;
     box-shadow: 2px 3px 20px 2px #cbcbcc;
     border-radius: 19%;
-}
-
-nav ul li p:hover {
-    background-color: #3b4355;
-
-
 }
 
 nav ul li:first-child p{
@@ -132,6 +139,26 @@ nav ul li:nth-child(4) p{
 
 nav ul li:nth-child(5) p{
     background: url(../images/shtrudel-side.png) no-repeat;
+}
+
+nav ul li:first-child p:hover {
+    background: url(../images/question-hover.png) no-repeat;
+}
+
+nav ul li:nth-child(2) p:hover{
+    background: #dededf url(../images/whoarewe-hover.png) no-repeat;
+}
+
+nav ul li:nth-child(3) p:hover{
+    background: #dededf url(../images/on-hover.png) no-repeat;
+}
+
+nav ul li:nth-child(4) p:hover{
+    background: #dededf url(../images/book-hover.png) no-repeat;
+}
+
+nav ul li:nth-child(5) p:hover{
+    background: url(../images/at-hover.png) no-repeat;
 }
 
 .line {
@@ -176,13 +203,7 @@ nav ul li:nth-child(5) p{
     z-index: 0;
 }
 
-h3 {
-    line-height: 48px;
-    font-size: 1.538em;
-    direction: rtl;
-    color: white;
-    margin-right: 15px;
-}
+
 
 aside {
     width: 226px;
@@ -388,6 +409,41 @@ main {
 
 }
 
+main h4 {
+    color: #ed1c24;
+    font-size: 1.23em;
+    width: 536px;
+    background: url(../images/whoarewe-line.png) no-repeat bottom;
+    padding-bottom: 8px;
+
+}
+
+.red-line {
+    background: url(../images/whoarewe-line.png) no-repeat bottom;
+    padding-bottom: 8px;
+    width: 536px;
+    height: 1px;
+    display: block;
+    margin: 35px 0px;
+}
+
+main h5 {
+    font-size: 1.0769em;
+    color: #ed1c24;
+    margin-bottom: 25px;
+}
+
+.entrepreneurs > h5 > span:nth-child(2) {
+    font-size: 0.923em;
+    font-weight: normal;
+}
+
+.entrepreneurs {
+    margin-bottom: 30px;
+}
+
+
+
 #golan-telecom-top .line { top: 76px; }
 
 #golan-telecom-top .side-line { top: 29px; }
@@ -400,6 +456,15 @@ main {
 #what-we-do {
     height: 517px;
     background-color: #f0f0f0;
+}
+
+#what-we-do article, #when-we-start article, #who-are-we article , #careers article {
+    position: relative;
+    bottom: 65px;
+    left: 46px;
+    width: 568px;
+    direction: rtl;
+    color: #353535;
 }
 
 #what-we-do .line { top: 70px; }
@@ -426,6 +491,27 @@ main {
     top: -103px;
 }
 
+#who-are-we > article > p:first-child {
+    width: 413px;
+    height: 194px;
+    float: left;
+}
+
+#who-are-we > article > img:nth-child(2){
+    float: right;
+    margin-top: 20px;
+}
+
+#who-are-we > article > img:nth-child(5) {
+    margin-top: 10px;
+    margin-bottom: 36px;
+}
+
+#who-are-we > article > img:nth-child(6) {
+    position: relative;
+    top: -30px;
+    right: 392px;
+}
 #when-we-start {
     height: 345px;
     background-color: #f0f0f0;
@@ -441,7 +527,7 @@ main {
 }
 
 #careers {
-    height: 1735px;
+    height: 1728px;
 }
 
 #careers .line { top: 74px; }
@@ -451,6 +537,18 @@ main {
 #careers .title-icon{
     background-image: url(../images/list.png);
     top: -104px;
+}
+
+#careers > article > img:nth-child(2) {
+    float: right;
+    margin-top: 26px;
+    margin-left: 26px;
+}
+
+#careers > article > p:nth-child(3) {
+    float: left;
+    margin-top: 35px;
+    width: 415px;
 }
 
 #contact-us {
@@ -467,4 +565,54 @@ main {
     top: -110px;
 }
 
+.job-property , .job-desc{
+    color: black;
+}
 
+.job-val {
+    color: #ed1c24;
+    margin-left: 20px;
+    margin-bottom: 24px;
+}
+
+.job-num {
+    color: #262f43;
+    font-size: 3.077em;
+    margin-left: 20px;
+}
+
+#careers > article {
+    color: #353535;
+    margin-bottom: 25px;
+}
+
+.job-desc , .job-desc-val{
+    margin-right: 45px;
+}
+
+.job-desc {
+    margin-top: 22px;
+}
+
+.job-property , .job-val{
+    position: relative;
+    bottom: 18px;
+}
+
+/* WIDE DESKTOP LAYOUT
+----------------------------------------------- */
+
+@media only screen and (min-width: 1176px) {
+
+}
+
+
+/* TABLET LAYOUT
+----------------------------------------------- */
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {}
+
+/* MOBILE LAYOUT (PORTRAIT/320PX)
+----------------------------------------------- */
+
+@media only screen and (max-width: 767px) { }

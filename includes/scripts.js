@@ -8,6 +8,13 @@ $(function() {
     });
 });
 
+$(function() {
+    $('#nav-list li').click(function() {
+        $('#nav-list li').removeClass('selected-nav');
+        $(this).addClass('selected-nav');
+
+    });
+});
 
 // Open article
 function openArticle() {
