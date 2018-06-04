@@ -613,6 +613,14 @@ ul {
         bottom: 18px;
     }
 
+    #who-are-we-mobile, #when-we-start-mobile, #contact-us-mobile, #what-we-do-mobile, #careers-mobile {
+        display: none;
+    }
+
+    #nav-mobile {
+        display: none;
+    }
+
 } /*END of media for desktop */
 
 /* WIDE MOBILE LAYOUT (LANDSCAPE/480PX)
@@ -653,8 +661,10 @@ ul {
     }
 
     #golan-telecom-top {
-        width: 80%;
-        margin: auto;
+        width: 100%;
+        margin: 0 auto;
+        position: relative;
+        bottom: 10px;
     }
 
     #golan-telecom-top article {
@@ -663,25 +673,32 @@ ul {
         direction: rtl;
         text-align: center;
         font-family: 'Rubik', sans-serif;
-        margin: auto;
+        margin: 0 auto;
         background-color: #f0f0f0;
 
     }
 
     #golan-telecom-top article p:nth-child(3) {
         color: #262f43;
+        width: 70%;
+        margin: 0 auto;
         font-size: 2.46em;
-        padding-top: 29px;
+        padding-top: 26px;
         padding-bottom: 37px;
     }
 
     #golan-telecom-top article p:nth-child(4) {
         color: #ed1c24;
         font-size: 1.384em;
+        position: relative;
+        bottom: 3%;
     }
 
     #golan-telecom-top article p:nth-child(4) span{
-        font-size: 1.903em;
+        color: #ed1c24;
+        font-size: 1.150em;
+        position: relative;
+        bottom: 6%;
     }
 
     #golan-telecom-top article a:nth-child(5) {
@@ -693,15 +710,29 @@ ul {
         font-size: 2.538em;
         padding: 6px 0px;
         border-radius: 4%;
-        margin: 13px auto 20px;
+        position: relative;
+        margin: 0 auto;
+        bottom: 2%;
     }
 
     nav {
         position: relative;
-        right: 20px;
+        left: 4%;
+        display: none;
     }
 
-    nav ul li {
+    nav section article p {
+        background: none;
+        width: 100%;
+    }
+
+    #nav-mobile{
+        position: relative;
+        left: 4%;
+        display: block;
+    }
+
+    #nav-mobile button {
         width: 295px;
         height: 35px;
         background-color: #262f43;
@@ -711,13 +742,15 @@ ul {
         display: inline-block;
     }
 
-    nav ul li a {
-        color: #c5c5c5;
-        font-size: 1.23em;
+    #nav-mobile a {
+        color: whitesmoke;
+        font-size: 1.67em;
+        line-height: 34px;
         font-weight: bold;
+        text-align: center;
     }
 
-    nav ul li p {
+    #nav-mobile  p {
         width: 34px;
         height: 34px;
         display: inline-block;
@@ -726,28 +759,108 @@ ul {
         float: right;
     }
 
-    nav ul li:first-child p {
+    #nav-mobile article p {
+        width: 100%;
+        height: 100%;
+        display: block;
+        border-radius: 0;
+        margin: 0 auto;
+        float: none;
+    }
+
+    #nav-mobile article {
+        padding: 10px;
+    }
+
+    #nav-mobile article img {
+        display: block;
+        margin: 0 auto;
+    }
+
+    #nav-mobile article span:first-child {
+        font-size: 1.5rem;
+    }
+
+    #nav-mobile article span:nth-child(3) {
+        color: #ed1c24;
+    }
+
+    #nav-mobile article span:nth-child(4) {
+        margin-right: 7%;
+    }
+
+    #nav-mobile article span:nth-child(5) {
+        color: #ed1c24;
+    }
+
+    #nav-mobile article span:nth-child(7) {
+        display: block;
+        margin-top: 7%;
+    }
+
+
+
+    #nav-mobile section {
+        width: 94%;
+        direction: rtl;
+    }
+
+    button a {
+        text-decoration: none;
+        margin: 0 auto;
+        width: 295px;
+        display: block;
+        text-align: center;
+    }
+
+    h3, h4 {
+        display: none;
+    }
+
+    h5 {
+        direction: rtl;
+        text-align: right;
+        font-size: 1em;
+        color: #ed1c24;
+        padding-bottom: 1%;
+    }
+
+    #nav-mobile button:first-child p:first-child {
         background: url(../images/question-hover.png) no-repeat;
     }
 
-    nav ul li:nth-child(2) p{
+    #nav-mobile button:nth-child(3) p{
         background: url(../images/whoarewe-hover.png) no-repeat;
     }
 
-    nav ul li:nth-child(3) p{
+    #nav-mobile button:nth-child(5) p{
         background: url(../images/on-hover.png) no-repeat;
     }
 
-    nav ul li:nth-child(4) p{
+    #nav-mobile button:nth-child(7) p{
         background: url(../images/book-hover.png) no-repeat;
     }
 
-    nav ul li:nth-child(5) p{
+    #nav-mobile button:nth-child(9) p{
         background: url(../images/at-hover.png) no-repeat;
     }
 
-    #who-are-we, #when-we-start, #contact-us, #what-we-do, #careers {
-        
+    #who-are-we-mobile, #when-we-start-mobile, #contact-us-mobile, #what-we-do-mobile, #careers-mobile {
+        display: none;
     }
+
+    #who-are-we, #when-we-start, #contact-us, #what-we-do, #careers {
+        display: none;
+    }
+
+
+    #who-are-we-mobile p{
+        background: none;
+        width: 70%;
+        margin: 0 auto;
+        direction: rtl;
+    }
+
+
 
 }
