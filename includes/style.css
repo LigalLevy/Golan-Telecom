@@ -163,6 +163,10 @@ ul {
         background: #dededf url(../images/whoarewe-hover.png) no-repeat;
     }
 
+    #p-hover{
+        background: #dededf url(../images/whoarewe-hover.png) no-repeat;
+    }
+
     nav ul li:nth-child(3) p:hover{
         background: #dededf url(../images/on-hover.png) no-repeat;
     }
@@ -283,22 +287,46 @@ ul {
         color: #ed1c24;
     }
 
-    aside section {
-        background: url(../images/article-back.png) no-repeat;
+    /*aside section*/
+    #myModal{
+        background: white;
         width: 812px;
         height: 410px;
         display: none;
         position: relative;
-        top: 47px;
-        right: 77px;
+        top: 50px;
+        right: 65px;
         z-index: 15;
+    }
+
+    /* The Modal (background) */
+    .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        padding-top: 20px; /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    }
+
+    /* Modal Content */
+    .modal-content {
+        background-color: #fefefe;
+        margin: auto;
+        padding: 20px;
+        width: 80%;
     }
 
     aside article {
         width: 775px;
         height: 410px;
         direction: rtl;
-        z-index: 16;
+        z-index: 20;
         padding-top: 46px;
         padding-right: 30px;
     }
@@ -306,25 +334,37 @@ ul {
     aside h4 {
         color: #252f41;
         font-size: 1.1em;
+        z-index: 20;
+
     }
     aside p {
         color: #616161;
         font-size: 0.95em;
+        z-index: 20;
+
     }
 
-    #close {
+    /* The Close Button */
+    .close {
         background: url(../images/close.png);
         width: 26px;
         height: 26px;
         display: none;
         position: relative;
-        top: 59px;
+        top: 47px;
         right: 66px;
         border-radius: 25%;
         box-shadow: 2px 3px 16px 0px #979798;
     }
 
-    #article01 { display: none; }
+    .close:hover,
+    .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    #article01 { }
 
     #article02 { display: none; }
 
@@ -620,6 +660,8 @@ ul {
     #nav-mobile {
         display: none;
     }
+
+
 
 } /*END of media for desktop */
 

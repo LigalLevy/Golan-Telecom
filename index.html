@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
     <link rel="stylesheet"  href="includes/style.css">
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
-    <script src="includes/scripts.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
     <div class="wrapper">
@@ -45,14 +45,14 @@
             <span></span>
             <h5>מהעיתונות</h5>
             <ul id="articles">
-                <li><a href="#">גולן טלקום הגשת מכרז</a></li>
-                <li><a href="#">מסירת ערבות גולן טלקום</a></li>
-                <li><a href="#">הסכם נדידה פנים ארצי</a></li>
-                <li><a href="#">הקדומת של גולן טלקום</a></li>
+                <li><a href="#article01" id="myBtn">גולן טלקום הגשת מכרז</a></li>
+                <li><a href="#article02" class="myBtn">מסירת ערבות גולן טלקום</a></li>
+                <li><a href="#article03" class="myBtn">הסכם נדידה פנים ארצי</a></li>
+                <li><a href="#article04" class="myBtn">הקדומת של גולן טלקום</a></li>
             </ul>
-            <span id="close"></span>
-            <section>
-                <article id="article01">
+            <span class="close"></span>
+            <section id="myModal" class="modal">
+                <article id="article01" class="modal-content">
                     <h4>קבוצת גולן טלקום, בראשה עומד היזם והמנכ"ל מיכאל גולן הגישה היום את הצעתה במכרז התדרים הסלולרי של משרד התקשורת</h4><br>
                     <p>קבוצת גולן טלקום, בראשה עומד היזם והמנכ"ל מיכאל גולן הגישה היום את הצעתה במכרז התדרים הסלולרי של משרד התקשורת,  בו ייבחרו שני מפעילים חדשים. <br>
                         9 ארגזי ההצעה של גולן טלקום נמסרו לוועדת המכרזים במשרד התקשורת בירושלים היום אחה"צ, על ידי אורן מוסט העומד בראש צוות המכרז, עו"ד ניצן אברבך ממשרד עו"ד צלרמאיר- פילוסוף ושי דוידור, מהצוות ההנדסי של הקבוצה.
@@ -70,7 +70,7 @@
                         בישראל, שהייתה חלוצה עולמית המהפכת התקשורת האישית הניידת באמצע שנות ה-90, חסרה כיום התחרותיות שכה אפיינה פעם את השוק הסלולרי. מכרז התדרים יעורר ויחולל תחרותיות לרווחת הצרכנים, איכות החיים ותועלת המשק בכללותו.
                     </p>
                 </article>
-                <article id="article02">
+                <article id="article02" class="modal-content">
                     <h4>גולן טלקום משלימה את כל התחייבויותיה מבעוד מועד: <br>
                         הגישה למשרד התקשורת את הערבות הבנקאית
                         בסך 360 מליון ₪ מבנק מזרחי טפחות
@@ -102,7 +102,7 @@
                     גולן תקשורת מודה לכל אותם ישראלים רבים אשר הפגינו תמיכה בחברה בשבועות האחרונים ואנו נפגוש אותם בשוק ב- 2012.
                     </p>
                 </article>
-                <article id="article03">
+                <article id="article03" class="modal-content">
                     <h4>חברת גולן טלקום, המפעיל הסלולרי החדש, חתמה על
                         הסכם נדידה פנים ארצי עם חברת סלקום
                     </h4>
@@ -117,7 +117,7 @@
                     </p><br><br>
                     <p><b>לפרטים נוספים : ינון הראל – הראל-מורדי תקשורת שיווקית משולבת</b><br><b> 03-6090906 || 0522688111</b></p>
                 </article>
-                <article id="article04">
+                <article id="article04" class="modal-content">
                     <h3>לתחרות יש קידומת - 058 :</h3>
                     <h4>משרד התקשורת העניק קידומת ללקוחות גולן טלקום - 058</h4>
                     <br><br>
@@ -525,9 +525,6 @@
             </section>
         </main>
     </div>
-
-
-
     <script src="includes/scripts.js"></script>
     <script>
         (function() {
