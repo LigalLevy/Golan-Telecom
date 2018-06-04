@@ -6,11 +6,15 @@
 * { margin:0; padding:0;}
 
 body {
-    background-color: #d9d9d9;
     font-size: 13px;
 }
 
 header, nav, main, section, article ,footer {display:block;}
+
+.wrapper {
+    background-color: white;
+    font-family: 'Arial', sans-serif;
+}
 
 a {
     text-decoration: none;
@@ -20,599 +24,730 @@ ul {
     list-style-type: none;
 }
 
-h3 {
-    line-height: 48px;
-    font-size: 1.538em;
-    direction: rtl;
-    color: white;
-    margin-right: 15px;
-}
-
-nav {
-    width: 199px;
-    height: 188px;
-    margin-right: 42px;
-    position: fixed;
-    z-index: 10;
-}
-
-.clear {
-    clear: both;
-}
-
 .logo {
     display: inline-block;
     height: 89px;
     width: 203px;
     background-image: url(../images/logo.png);
-    margin-top: 57px;
-}
-
-.lang {
-    display: inline-block;
-    width: 52px;
-    height: 22px;
-    font-size: 0.846em;
-    text-align: center;
-    line-height: 22px;
-    color: #262262;
-    margin: 19px 0;
-    background-image: url(../images/langButton.png);
-}
-
-.wrapper {
-    max-width: 991px;
-    width: 100%;
-    height: 5119px;
-    margin: 0 auto 150px;
-    background-color: white;
-    font-family: 'Arial', sans-serif;
-}
-
-header {
-    float: right;
-    width: 20.585%;
-    height: 337px;
-    right: 207px;
-    direction: rtl;
-    margin-right: 41px;
-}
-
-
-
-
-nav ul li a {
-    color: #262262;
-    font-size: 1.23em;
-    font-weight: bold;
-    padding-right: 16px;
-}
-
-nav > ul > li {
-    width: 158px;
-    height: 34px;
-    line-height: 34px;
-    margin-bottom: 4px;
-    box-shadow: 2px 3px 20px 2px #cbcbcc;
-    display: inline-block;
-    background-color: white;
-}
-
-.selected-nav {
-    background-color: #3b4355;
-}
-
-.selected-nav a {
-    color: #949495;
-}
-
-.selected-nav nav ul li:first-child p{
-    background: url(../images/question-hover.png) no-repeat;
-}
-
-nav ul li p {
-    background-color: #cbcbcc;
-    width: 34px;
-    height: 34px;
-    display: inline-block;
-    margin-right: -41px;
-    float: right;
-    box-shadow: 2px 3px 20px 2px #cbcbcc;
-    border-radius: 19%;
-}
-
-nav ul li:first-child p{
-    background: #dededf url(../images/question-side.png) no-repeat;
-}
-
-nav ul li:nth-child(2) p{
-    background: #dededf url(../images/who-are-we-side.png) no-repeat;
-}
-
-nav ul li:nth-child(3) p{
-    background: #dededf url(../images/power-side.png) no-repeat;
-}
-
-nav ul li:nth-child(4) p{
-    background: #dededf url(../images/list-side.png) no-repeat;
-}
-
-nav ul li:nth-child(5) p{
-    background: url(../images/shtrudel-side.png) no-repeat;
-}
-
-nav ul li:first-child p:hover {
-    background: url(../images/question-hover.png) no-repeat;
-}
-
-nav ul li:nth-child(2) p:hover{
-    background: #dededf url(../images/whoarewe-hover.png) no-repeat;
-}
-
-nav ul li:nth-child(3) p:hover{
-    background: #dededf url(../images/on-hover.png) no-repeat;
-}
-
-nav ul li:nth-child(4) p:hover{
-    background: #dededf url(../images/book-hover.png) no-repeat;
-}
-
-nav ul li:nth-child(5) p:hover{
-    background: url(../images/at-hover.png) no-repeat;
-}
-
-.line {
-    background: url(../images/red-line.png);
-    display: inline-block;
-    width: 553px;
-    height: 48px;
-    position: relative;
-    right: 50px;
-    z-index: 13;
-    box-shadow: 1px 0px 20px 0px #858588;
-}
-
-.side-line {
-    background: url(../images/red-line-back.png);
-    display: block;
-    width: 64px;
-    height: 96px;
-    position: relative;
-    left: -64px;
-    z-index: 0;
-}
-
-.title-icon {
-    width: 113px;
-    height: 113px;
-    display: inline-block;
-    position: relative;
-    left: 503px;
-    z-index: 12;
-    border-radius: 15%;
-    box-shadow: 2px 3px 20px 0px #979798;
-}
-
-.boundary-line {
-    background: url(../images/line.png);
-    display: block;
-    width: 993px;
-    height: 11px;
-    position: relative;
-    right: 1px;
-    z-index: 0;
-}
-
-
-
-aside {
-    width: 226px;
-    height: 279px;
-    background: url(../images/news-back.png) no-repeat;
-    position: relative;
-    bottom: 206px;
-    right: 30px;
-    float: right;
-    direction: rtl;
-    padding-top: 29px;
-}
-
-aside h5 , aside a {
-    margin-right: 49px;
-    color: #656565;
-}
-
-aside h5:first-child {
-    background: url(../images/icon_rss.png) no-repeat right;
-    height: 32px;
-    line-height: 32px;
-    padding-right: 40px;
-}
-
-aside span:nth-child(2) {
-    display: block;
-    background: url(../images/grey-line-news.png);
-    width: 122px;
-    height: 1px;
-    margin: 8px auto;
-
-}
-
-aside h5:nth-child(3) {
-    background: url(../images/newspaper.png) no-repeat right;
-    height: 32px;
-    line-height: 32px;
-    padding-right: 40px;
-}
-
-aside > ul {
-    list-style-type: none;
-    margin-top: 9px;
-}
-
-aside > ul > li {
-    margin-bottom: 10px;
-}
-aside > ul > li > a {
-    margin-right: 52px;
-    color: #0e1b4a;
-    font-size: 0.923em;
-    text-decoration: underline;
-}
-
-aside > ul > li > a:hover {
-    color: #ed1c24;
-}
-
-.selected-article a{
-    font-weight: bold;
-    color: #ed1c24;
-}
-
-aside section {
-    background: url(../images/article-back.png) no-repeat;
-    width: 812px;
-    height: 410px;
-    display: none;
-    position: relative;
-    top: 47px;
-    right: 77px;
-    z-index: 15;
-}
-
-aside article {
-    width: 775px;
-    height: 410px;
-    direction: rtl;
-    z-index: 16;
-    padding-top: 46px;
-    padding-right: 30px;
-}
-
-aside h4 {
-    color: #252f41;
-    font-size: 1.1em;
-}
-aside p {
-    color: #616161;
-    font-size: 0.95em;
-}
-
-#close {
-    background: url(../images/close.png);
-    width: 26px;
-    height: 26px;
-    display: none;
-    position: relative;
-    top: 59px;
-    right: 66px;
-    border-radius: 25%;
-    box-shadow: 2px 3px 16px 0px #979798;
-}
-
-#article01 { display: none; }
-
-#article02 { display: none; }
-
-#article02 h4 , #article04 h4{
-    font-size: 1.3em;
-    text-align: center;
-    text-decoration: underline;
-}
-
-#article02 h6 {
-    font-size: 1em;
-    text-align: center;
-}
-
-#article03 {
-    width: 615px;
-    display: none;
-}
-
-#article04 {
-    width: 650px;
-    display: none;
-}
-
-#article04 h3 {
-    color: #ed1c24;
-    font-size: 1.85em;
-    text-align: center;
-}
-
-main {
-    width: 100%;
-    margin-bottom: 150px;
-}
-
-#golan-telecom-top {
-    width: 68.51664985%;
-    height: 629px;
-}
-
-#golan-telecom-top article {
-    width: 618px;
-    height: 472px;
-    position: relative;
-    bottom: 101px;
-    font-family: 'Rubik', sans-serif;
-}
-
-#golan-telecom-top article p:first-child{
-    font-size: 2.76em;
-    color: #262f43;
-    margin-top: 62px;
-    direction: rtl;
-
-}
-
-#golan-telecom-top article span{
-    color: #353535;
-    font-size: 1.076em;
-    margin-left: 31px;
-}
-
-#golan-telecom-top article p:nth-child(3){
-    font-size: 2.46em;
-    color: #ed1c24;
-    direction: rtl;
-    margin-top: 40px;
-    margin-bottom: 75px;
-}
-
-#golan-telecom-top article p:nth-child(4){
-    font-size: 1.692em;
-    color: #ed1c24;
-    direction: rtl;
-    position: relative;
-    right: 294px;
-}
-
-#golan-telecom-top article a{
-    padding: 10px 26px;
-    line-height: 46px;
-    border: 1px solid #ed1c24;
-    background-color: white;
-    color: #262f43;
-    font-size: 1.23em;
-    font-family: Arial;
-    font-weight: bold;
-    margin-left: 53px;
-    box-shadow: 2px 8px 20px 0px #b1b1b2;
-}
-
-#golan-telecom-top article p:nth-child(4) span{
-    font-size: 1.363em;
-    color: #ed1c24;
-    direction: rtl;
-
-}
-
-main h4 {
-    color: #ed1c24;
-    font-size: 1.23em;
-    width: 536px;
-    background: url(../images/whoarewe-line.png) no-repeat bottom;
-    padding-bottom: 8px;
-
-}
-
-.red-line {
-    background: url(../images/whoarewe-line.png) no-repeat bottom;
-    padding-bottom: 8px;
-    width: 536px;
-    height: 1px;
-    display: block;
-    margin: 35px 0px;
-}
-
-main h5 {
-    font-size: 1.0769em;
-    color: #ed1c24;
-    margin-bottom: 25px;
-}
-
-.entrepreneurs > h5 > span:nth-child(2) {
-    font-size: 0.923em;
-    font-weight: normal;
-}
-
-.entrepreneurs {
-    margin-bottom: 30px;
-}
-
-
-
-#golan-telecom-top .line { top: 76px; }
-
-#golan-telecom-top .side-line { top: 29px; }
-
-#golan-telecom-top .title-icon{
-    background-image: url(../images/phone.png);
-    top: -101px;
-}
-
-#what-we-do {
-    height: 517px;
-    background-color: #f0f0f0;
-}
-
-#what-we-do article, #when-we-start article, #who-are-we article , #careers article {
-    position: relative;
-    bottom: 65px;
-    left: 46px;
-    width: 568px;
-    direction: rtl;
-    color: #353535;
-}
-
-#what-we-do .line { top: 70px; }
-
-#what-we-do .side-line { top: 22px; }
-
-#what-we-do .title-icon{
-    background-image: url(../images/question.png);
-    top: -105px;
-    border-radius: 17%;
-
-}
-
-#who-are-we {
-    height: 1004px;
-}
-
-#who-are-we .line { top: 75px; }
-
-#who-are-we .side-line { top: 27px; }
-
-#who-are-we .title-icon{
-    background-image: url(../images/whoarewe.png);
-    top: -103px;
-}
-
-#who-are-we > article > p:first-child {
-    width: 413px;
-    height: 194px;
-    float: left;
-}
-
-#who-are-we > article > img:nth-child(2){
-    float: right;
-    margin-top: 20px;
-}
-
-#who-are-we > article > img:nth-child(5) {
-    margin-top: 10px;
-    margin-bottom: 36px;
-}
-
-#who-are-we > article > img:nth-child(6) {
-    position: relative;
-    top: -30px;
-    right: 392px;
-}
-#when-we-start {
-    height: 345px;
-    background-color: #f0f0f0;
-}
-
-#when-we-start .line { top: 61px; }
-
-#when-we-start .side-line { top: 14px; }
-
-#when-we-start .title-icon{
-    background-image: url(../images/power.png);
-    top: -114px;
-}
-
-#careers {
-    height: 1728px;
-}
-
-#careers .line { top: 74px; }
-
-#careers .side-line { top: 26px; }
-
-#careers .title-icon{
-    background-image: url(../images/list.png);
-    top: -104px;
-}
-
-#careers > article > img:nth-child(2) {
-    float: right;
-    margin-top: 26px;
-    margin-left: 26px;
-}
-
-#careers > article > p:nth-child(3) {
-    float: left;
-    margin-top: 35px;
-    width: 415px;
-}
-
-#contact-us {
-    height: 889px;
-    background-color: #f0f0f0;
-}
-
-#contact-us .line { top: 68px; }
-
-#contact-us .side-line { top: 20px; }
-
-#contact-us .title-icon{
-    background-image: url(../images/shtrudel.png);
-    top: -110px;
-}
-
-.job-property , .job-desc{
-    color: black;
-}
-
-.job-val {
-    color: #ed1c24;
-    margin-left: 20px;
-    margin-bottom: 24px;
-}
-
-.job-num {
-    color: #262f43;
-    font-size: 3.077em;
-    margin-left: 20px;
-}
-
-#careers > article {
-    color: #353535;
-    margin-bottom: 25px;
-}
-
-.job-desc , .job-desc-val{
-    margin-right: 45px;
-}
-
-.job-desc {
-    margin-top: 22px;
-}
-
-.job-property , .job-val{
-    position: relative;
-    bottom: 18px;
 }
 
 /* WIDE DESKTOP LAYOUT
 ----------------------------------------------- */
 
-@media only screen and (min-width: 1176px) {
+@media only screen and (min-width: 900px) {
+
+    body {
+        background-color: #d9d9d9;
+    }
+
+    h3 {
+        line-height: 48px;
+        font-size: 1.538em;
+        direction: rtl;
+        color: white;
+        margin-right: 15px;
+    }
+
+    nav {
+        width: 199px;
+        height: 188px;
+        margin-right: 42px;
+        position: fixed;
+        right: 179px;
+        top: 206px;
+        z-index: 10;
+        direction: rtl;
+    }
+
+    .clear {
+        clear: both;
+    }
+
+    .logo {
+        margin-top: 57px;
+    }
+
+    .lang {
+        display: inline-block;
+        width: 52px;
+        height: 22px;
+        font-size: 0.846em;
+        text-align: center;
+        line-height: 22px;
+        color: #262262;
+        margin: 19px 0;
+        background-image: url(../images/langButton.png);
+    }
+
+    .wrapper {
+        max-width: 991px;
+        width: 100%;
+        height: 5119px;
+        margin: 0 auto 150px;
+    }
+
+    header {
+        float: right;
+        width: 20.585%;
+        height: 337px;
+        right: 207px;
+        direction: rtl;
+        margin-right: 41px;
+    }
+
+    nav ul li a {
+        color: #262262;
+        font-size: 1.23em;
+        font-weight: bold;
+        padding-right: 16px;
+    }
+
+    nav > ul > li {
+        width: 158px;
+        height: 34px;
+        line-height: 34px;
+        margin-bottom: 4px;
+        box-shadow: 2px 3px 20px 2px #cbcbcc;
+        display: inline-block;
+        background-color: white;
+    }
+
+    .selected-nav {
+        background-color: #3b4355;
+    }
+
+    .selected-nav a {
+        color: #949495;
+    }
+
+    .selected-nav nav ul li:first-child p{
+        background: url(../images/question-hover.png) no-repeat;
+    }
+
+    nav ul li p {
+        background-color: #cbcbcc;
+        width: 34px;
+        height: 34px;
+        display: inline-block;
+        margin-right: -41px;
+        float: right;
+        box-shadow: 2px 3px 20px 2px #cbcbcc;
+        border-radius: 19%;
+    }
+
+    nav ul li:first-child p{
+        background: #dededf url(../images/question-side.png) no-repeat;
+    }
+
+    nav ul li:nth-child(2) p{
+        background: #dededf url(../images/who-are-we-side.png) no-repeat;
+    }
+
+    nav ul li:nth-child(3) p{
+        background: #dededf url(../images/power-side.png) no-repeat;
+    }
+
+    nav ul li:nth-child(4) p{
+        background: #dededf url(../images/list-side.png) no-repeat;
+    }
+
+    nav ul li:nth-child(5) p{
+        background: url(../images/shtrudel-side.png) no-repeat;
+    }
+
+    nav ul li:first-child p:hover {
+        background: url(../images/question-hover.png) no-repeat;
+    }
+
+    nav ul li:nth-child(2) p:hover{
+        background: #dededf url(../images/whoarewe-hover.png) no-repeat;
+    }
+
+    nav ul li:nth-child(3) p:hover{
+        background: #dededf url(../images/on-hover.png) no-repeat;
+    }
+
+    nav ul li:nth-child(4) p:hover{
+        background: #dededf url(../images/book-hover.png) no-repeat;
+    }
+
+    nav ul li:nth-child(5) p:hover{
+        background: url(../images/at-hover.png) no-repeat;
+    }
+
+    .line {
+        background: url(../images/red-line.png);
+        display: inline-block;
+        width: 553px;
+        height: 48px;
+        position: relative;
+        right: 50px;
+        z-index: 13;
+        box-shadow: 1px 0px 20px 0px #858588;
+    }
+
+    .side-line {
+        background: url(../images/red-line-back.png);
+        display: block;
+        width: 64px;
+        height: 96px;
+        position: relative;
+        left: -64px;
+        z-index: 0;
+    }
+
+    .title-icon {
+        width: 113px;
+        height: 113px;
+        display: inline-block;
+        position: relative;
+        left: 503px;
+        z-index: 12;
+        border-radius: 15%;
+        box-shadow: 2px 3px 20px 0px #979798;
+    }
+
+    .boundary-line {
+        background: url(../images/line.png);
+        display: block;
+        width: 993px;
+        height: 11px;
+        position: relative;
+        right: 1px;
+        z-index: 0;
+    }
+
+
+
+    aside {
+        width: 226px;
+        height: 279px;
+        background: url(../images/news-back.png) no-repeat;
+        position: relative;
+        bottom: 206px;
+        right: 30px;
+        float: right;
+        direction: rtl;
+        padding-top: 29px;
+    }
+
+    aside h5 , aside a {
+        margin-right: 49px;
+        color: #656565;
+    }
+
+    aside h5:first-child {
+        background: url(../images/icon_rss.png) no-repeat right;
+        height: 32px;
+        line-height: 32px;
+        padding-right: 40px;
+    }
+
+    aside span:nth-child(2) {
+        display: block;
+        background: url(../images/grey-line-news.png);
+        width: 122px;
+        height: 1px;
+        margin: 8px auto;
+
+    }
+
+    aside h5:nth-child(3) {
+        background: url(../images/newspaper.png) no-repeat right;
+        height: 32px;
+        line-height: 32px;
+        padding-right: 40px;
+    }
+
+    aside > ul {
+        list-style-type: none;
+        margin-top: 9px;
+    }
+
+    aside > ul > li {
+        margin-bottom: 10px;
+    }
+    aside > ul > li > a {
+        margin-right: 52px;
+        color: #0e1b4a;
+        font-size: 0.923em;
+        text-decoration: underline;
+    }
+
+    aside > ul > li > a:hover {
+        color: #ed1c24;
+    }
+
+    .selected-article a{
+        font-weight: bold;
+        color: #ed1c24;
+    }
+
+    aside section {
+        background: url(../images/article-back.png) no-repeat;
+        width: 812px;
+        height: 410px;
+        display: none;
+        position: relative;
+        top: 47px;
+        right: 77px;
+        z-index: 15;
+    }
+
+    aside article {
+        width: 775px;
+        height: 410px;
+        direction: rtl;
+        z-index: 16;
+        padding-top: 46px;
+        padding-right: 30px;
+    }
+
+    aside h4 {
+        color: #252f41;
+        font-size: 1.1em;
+    }
+    aside p {
+        color: #616161;
+        font-size: 0.95em;
+    }
+
+    #close {
+        background: url(../images/close.png);
+        width: 26px;
+        height: 26px;
+        display: none;
+        position: relative;
+        top: 59px;
+        right: 66px;
+        border-radius: 25%;
+        box-shadow: 2px 3px 16px 0px #979798;
+    }
+
+    #article01 { display: none; }
+
+    #article02 { display: none; }
+
+    #article02 h4 , #article04 h4{
+        font-size: 1.3em;
+        text-align: center;
+        text-decoration: underline;
+    }
+
+    #article02 h6 {
+        font-size: 1em;
+        text-align: center;
+    }
+
+    #article03 {
+        width: 615px;
+        display: none;
+    }
+
+    #article04 {
+        width: 650px;
+        display: none;
+    }
+
+    #article04 h3 {
+        color: #ed1c24;
+        font-size: 1.85em;
+        text-align: center;
+    }
+
+    main {
+        width: 100%;
+        margin-bottom: 150px;
+    }
+
+    #golan-telecom-top {
+        width: 68.51664985%;
+        height: 629px;
+    }
+
+    #golan-telecom-top article {
+        width: 618px;
+        height: 472px;
+        position: relative;
+        bottom: 101px;
+        font-family: 'Rubik', sans-serif;
+    }
+
+    #golan-telecom-top article p:first-child{
+        font-size: 2.76em;
+        color: #262f43;
+        margin-top: 62px;
+        direction: rtl;
+
+    }
+
+    #golan-telecom-top article span{
+        color: #353535;
+        font-size: 1.076em;
+        margin-left: 31px;
+    }
+
+    #golan-telecom-top article p:nth-child(3){
+        font-size: 2.46em;
+        color: #ed1c24;
+        direction: rtl;
+        margin-top: 40px;
+        margin-bottom: 75px;
+    }
+
+    #golan-telecom-top article p:nth-child(4){
+        font-size: 1.692em;
+        color: #ed1c24;
+        direction: rtl;
+        position: relative;
+        right: 294px;
+    }
+
+    #golan-telecom-top article a{
+        padding: 10px 26px;
+        line-height: 46px;
+        border: 1px solid #ed1c24;
+        background-color: white;
+        color: #262f43;
+        font-size: 1.23em;
+        font-family: Arial;
+        font-weight: bold;
+        margin-left: 53px;
+        box-shadow: 2px 8px 20px 0px #b1b1b2;
+    }
+
+    #golan-telecom-top article p:nth-child(4) span{
+        font-size: 1.363em;
+        color: #ed1c24;
+        direction: rtl;
+
+    }
+
+    main h4 {
+        color: #ed1c24;
+        font-size: 1.23em;
+        width: 536px;
+        background: url(../images/whoarewe-line.png) no-repeat bottom;
+        padding-bottom: 8px;
+
+    }
+
+    .red-line {
+        background: url(../images/whoarewe-line.png) no-repeat bottom;
+        padding-bottom: 8px;
+        width: 536px;
+        height: 1px;
+        display: block;
+        margin: 35px 0px;
+    }
+
+    main h5 {
+        font-size: 1.0769em;
+        color: #ed1c24;
+        margin-bottom: 25px;
+    }
+
+    .entrepreneurs > h5 > span:nth-child(2) {
+        font-size: 0.923em;
+        font-weight: normal;
+    }
+
+    .entrepreneurs {
+        margin-bottom: 30px;
+    }
+
+
+
+    #golan-telecom-top .line { top: 76px; }
+
+    #golan-telecom-top .side-line { top: 29px; }
+
+    #golan-telecom-top .title-icon{
+        background-image: url(../images/phone.png);
+        top: -101px;
+    }
+
+    #what-we-do {
+        height: 517px;
+        background-color: #f0f0f0;
+    }
+
+    #what-we-do article, #when-we-start article, #who-are-we article , #careers article {
+        position: relative;
+        bottom: 65px;
+        left: 46px;
+        width: 568px;
+        direction: rtl;
+        color: #353535;
+    }
+
+    #what-we-do .line { top: 70px; }
+
+    #what-we-do .side-line { top: 22px; }
+
+    #what-we-do .title-icon{
+        background-image: url(../images/question.png);
+        top: -105px;
+        border-radius: 17%;
+
+    }
+
+    #who-are-we {
+        height: 1004px;
+    }
+
+    #who-are-we .line { top: 75px; }
+
+    #who-are-we .side-line { top: 27px; }
+
+    #who-are-we .title-icon{
+        background-image: url(../images/whoarewe.png);
+        top: -103px;
+    }
+
+    #who-are-we > article > p:first-child {
+        width: 413px;
+        height: 194px;
+        float: left;
+    }
+
+    #who-are-we > article > img:nth-child(2){
+        float: right;
+        margin-top: 20px;
+    }
+
+    #who-are-we > article > img:nth-child(5) {
+        margin-top: 10px;
+        margin-bottom: 36px;
+    }
+
+    #who-are-we > article > img:nth-child(6) {
+        position: relative;
+        top: -30px;
+        right: 392px;
+    }
+    #when-we-start {
+        height: 345px;
+        background-color: #f0f0f0;
+    }
+
+    #when-we-start .line { top: 61px; }
+
+    #when-we-start .side-line { top: 14px; }
+
+    #when-we-start .title-icon{
+        background-image: url(../images/power.png);
+        top: -114px;
+    }
+
+    #careers {
+        height: 1728px;
+    }
+
+    #careers .line { top: 74px; }
+
+    #careers .side-line { top: 26px; }
+
+    #careers .title-icon{
+        background-image: url(../images/list.png);
+        top: -104px;
+    }
+
+    #careers > article > img:nth-child(2) {
+        float: right;
+        margin-top: 26px;
+        margin-left: 26px;
+    }
+
+    #careers > article > p:nth-child(3) {
+        float: left;
+        margin-top: 35px;
+        width: 415px;
+    }
+
+    #contact-us {
+        height: 889px;
+        background-color: #f0f0f0;
+    }
+
+    #contact-us .line { top: 68px; }
+
+    #contact-us .side-line { top: 20px; }
+
+    #contact-us .title-icon{
+        background-image: url(../images/shtrudel.png);
+        top: -110px;
+    }
+
+    .job-property , .job-desc{
+        color: black;
+    }
+
+    .job-val {
+        color: #ed1c24;
+        margin-left: 20px;
+        margin-bottom: 24px;
+    }
+
+    .job-num {
+        color: #262f43;
+        font-size: 3.077em;
+        margin-left: 20px;
+    }
+
+    #careers > article {
+        color: #353535;
+        margin-bottom: 25px;
+    }
+
+    .job-desc , .job-desc-val{
+        margin-right: 45px;
+    }
+
+    .job-desc {
+        margin-top: 22px;
+    }
+
+    .job-property , .job-val{
+        position: relative;
+        bottom: 18px;
+    }
+
+} /*END of media for desktop */
+
+/* WIDE MOBILE LAYOUT (LANDSCAPE/480PX)
+----------------------------------------------- */
+
+@media only screen and (max-width: 899px) {
+
+    body {
+      width: 360px;
+        margin: 0 auto;
+    }
+
+    .wrapper {
+        max-width: 100%;
+        background-color: white;
+        margin: 0 auto;
+    }
+
+    header {
+        width: 100%;
+        min-height: 95px;
+        text-align: center;
+    }
+
+    .logo {
+        background-size: 80% auto;
+        background-repeat: no-repeat;
+        background-position: center center;
+        margin: 16px auto 10px;
+    }
+
+    #golan-telecom-top article p:first-child,
+    #golan-telecom-top article span:nth-child(2),
+    #golan-telecom-top h3,
+    aside,
+    .lang{
+        display: none;
+    }
+
+    #golan-telecom-top {
+        width: 80%;
+        margin: auto;
+    }
+
+    #golan-telecom-top article {
+        width: 93%;
+        height: 320px;
+        direction: rtl;
+        text-align: center;
+        font-family: 'Rubik', sans-serif;
+        margin: auto;
+        background-color: #f0f0f0;
+
+    }
+
+    #golan-telecom-top article p:nth-child(3) {
+        color: #262f43;
+        font-size: 2.46em;
+        padding-top: 29px;
+        padding-bottom: 37px;
+    }
+
+    #golan-telecom-top article p:nth-child(4) {
+        color: #ed1c24;
+        font-size: 1.384em;
+    }
+
+    #golan-telecom-top article p:nth-child(4) span{
+        font-size: 1.903em;
+    }
+
+    #golan-telecom-top article a:nth-child(5) {
+        display: block;
+        width: 194px;
+        line-height: 50px;
+        background-color: #ed1c24;
+        color: white;
+        font-size: 2.538em;
+        padding: 6px 0px;
+        border-radius: 4%;
+        margin: 13px auto 20px;
+    }
+
+    nav {
+        position: relative;
+        right: 20px;
+    }
+
+    nav ul li {
+        width: 295px;
+        height: 35px;
+        background-color: #262f43;
+        direction: rtl;
+        line-height: 35px;
+        margin-bottom: 5px;
+        display: inline-block;
+    }
+
+    nav ul li a {
+        color: #c5c5c5;
+        font-size: 1.23em;
+        font-weight: bold;
+    }
+
+    nav ul li p {
+        width: 34px;
+        height: 34px;
+        display: inline-block;
+        border-radius: 19%;
+        margin-right: -40px;
+        float: right;
+    }
+
+    nav ul li:first-child p {
+        background: url(../images/question-hover.png) no-repeat;
+    }
+
+    nav ul li:nth-child(2) p{
+        background: url(../images/whoarewe-hover.png) no-repeat;
+    }
+
+    nav ul li:nth-child(3) p{
+        background: url(../images/on-hover.png) no-repeat;
+    }
+
+    nav ul li:nth-child(4) p{
+        background: url(../images/book-hover.png) no-repeat;
+    }
+
+    nav ul li:nth-child(5) p{
+        background: url(../images/at-hover.png) no-repeat;
+    }
+
+    #who-are-we, #when-we-start, #contact-us, #what-we-do, #careers {
+        
+    }
 
 }
-
-
-/* TABLET LAYOUT
------------------------------------------------ */
-
-@media only screen and (min-width: 768px) and (max-width: 991px) {}
-
-/* MOBILE LAYOUT (PORTRAIT/320PX)
------------------------------------------------ */
-
-@media only screen and (max-width: 767px) { }
