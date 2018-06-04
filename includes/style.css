@@ -16,6 +16,14 @@ header, nav, main, section, article ,footer {display:block;}
     font-family: 'Arial', sans-serif;
 }
 
+#en-version {
+    font-size: 11px;
+}
+
+#en-version nav {
+    direction: ltr;
+}
+
 a {
     text-decoration: none;
 }
@@ -110,6 +118,10 @@ ul {
         box-shadow: 2px 3px 20px 2px #cbcbcc;
         display: inline-block;
         background-color: white;
+    }
+
+    #en-version nav ul li a {
+        font-size: 0.99em;
     }
 
     .selected-nav {
@@ -433,6 +445,15 @@ ul {
         direction: rtl;
         margin-top: 40px;
         margin-bottom: 75px;
+    }
+
+    #en-version #golan-telecom-top article p:nth-child(4) {
+        direction: ltr;
+        right: -54px;
+    }
+
+    #en-version #golan-telecom-top article span{
+        margin-left: 1px;
     }
 
     #golan-telecom-top article p:nth-child(4){
@@ -903,6 +924,8 @@ ul {
         direction: rtl;
     }
 
-
+    #en-version #nav-mobile article {
+        direction:ltr;
+    }
 
 }

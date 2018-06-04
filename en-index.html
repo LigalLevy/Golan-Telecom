@@ -10,7 +10,7 @@
     <script src="includes/scripts.js"></script>
 </head>
 <body>
-    <div class="wrapper">
+    <div id="en-version" class="wrapper">
         <header>
             <a class="logo" href="#"></a>
             <a class="lang" href="index.html"><b>עברית</b></a>
@@ -32,7 +32,7 @@
             <ul id="nav-list">
                 <li><p></p><a href="#what-we-do">What are we doing?</a></li>
                 <li><p></p><a href="#who-are-we">Who we are?</a></li>
-                <li><p></p><a href="#when-we-start">When will we start operating?</a></li>
+                <li><p></p><a href="#when-we-start">When we'll start operating?</a></li>
                 <li><p></p><a href="#careers">Careers</a></li>
                 <li><p></p><a href="#contact-us">Contact Us</a></li>
             </ul>
@@ -44,14 +44,14 @@
             <span></span>
             <h5>From the newspaper</h5>
             <ul id="articles">
-                <li><a href="#">GT submitted a tender</a></li>
-                <li><a href="#">Delivery of GT Guarantee</a></li>
-                <li><a href="#">Internal roaming agreement</a></li>
-                <li><a href="#">Golan Telecom's prefix</a></li>
+                <li><a href="#article01" id="myBtn">GT submitted a tender</a></li>
+                <li><a href="#article02">Delivery of GT Guarantee</a></li>
+                <li><a href="#article03">Internal roaming agreement</a></li>
+                <li><a href="#article04">Golan Telecom's prefix</a></li>
             </ul>
-            <span id="close"></span>
-            <section>
-                <article id="article01">
+            <span class="close"></span>
+            <section id="myModal" class="modal">
+                <article id="article01" class="modal-content">
                     <h4>The Golan Telecom Group, headed by entrepreneur and CEO Michael Golan, today submitted its bid in the cellular frequencies tender of the Ministry of Communications</h4><br>
                     <p>The Golan Telecom Group, headed by entrepreneur and CEO Michael Golan, today submitted its bid in the cellular frequencies tender of the Ministry of Communications, in which two new operators will be selected.<br>
                         9 The tender boxes of Golan Telecom were submitted to the Tender Committee of the Ministry of Communications in Jerusalem this afternoon by Oren Most, who heads the tender team, Adv. Nitzan Averbach of Zellermayer-Pelossof and Shai Duidor, of the engineering team.</p><br>
@@ -70,7 +70,7 @@
                         In Israel, which was a global pioneer in the mobile personal communications revolution in the mid-1990s, the competition that once characterized the cellular market is lacking. The frequency tender will stimulate and generate competition for the welfare of consumers, the quality of life and the benefit of the economy as a whole.<br>
                     </p>
                 </article>
-                <article id="article02">
+                <article id="article02" class="modal-content">
                     <h4>Golan Telecom completes all its obligations in advance: <br> it has submitted the bank guarantee to the Ministry of Communications
                         In the amount of NIS 360 million from Mizrahi Tefahot Bank
                     </h4>
@@ -102,7 +102,7 @@
                         Golan Communications thanks all those Israelis who have demonstrated their support in the past few weeks and we will meet them in the market in 2012.
                     </p>
                 </article>
-                <article id="article03">
+                <article id="article03" class="modal-content">
                     <h4>Golan Telecom, the new cellular operator, has signed the agreement
                         An internal roaming agreement with Cellcom
                     </h4>
@@ -118,7 +118,7 @@
                     <br><br>
                     <p><b>For additional information: Yinon Harel - Harel-Mordy Integrated marketing communications</b><br><b> 03-6090906 || 0522688111</b></p>
                 </article>
-                <article id="article04">
+                <article id="article04" class="modal-content">
                     <h3>The competition has a prefix - 058:</h3>
                     <h4>The Ministry of Communications awarded a prefix to Golan Telecom customers - 058</h4>
                     <br><br>
@@ -135,6 +135,220 @@
                 </article>
             </section>
         </aside>
+        <!-- NAV AND MAIN VERSION FOR MOBILE-->
+        <nav id="nav-mobile">
+            <button class="nav-list-mobile" ><p></p><a href="#who-are-we-mobile">Who we are?</a></button>
+            <section id="who-are-we-mobile">
+                <span class="side-line"></span>
+                <span class="title-icon"></span>
+                <article>
+                    <p>
+                        We are a group of Israeli and foreign entrepreneurs and managers, including new immigrants, veteran Israelis and investors from abroad, with managerial experience, professional background and capital, working together to provide quality communications services at competitive prices. , With the intention of offering the Israeli public a winning cellular package.
+                        <br><br>
+                        Our activities abroad and in Israel in the face of huge and satisfying communications companies have been very successful and highly valued as an innovative, competitive and bold alternative, and our owners, Xenia Niall and Michael Golan are known for their aggressive competition in the French communications market.
+                    </p>
+                    <img src="images/people.png">
+                    <div class="clear"></div>
+                    <h4>The entrepreneurs</h4>
+                    <img src="images/hand.png">
+                    <img src="images/logo_free.png">
+                </article>
+                <article class="entrepreneurs">
+                    <h5>Ronen Shmueli
+                        <span> || </span>
+                        <span>Partner</span>
+                    </h5>
+                    <p>
+                        A French resident, has a reputation as one of the most successful and leading telecommunications entrepreneurs in Europe. Entrepreneur and controlling shareholder of the telecommunications giant ILIAD-FREE, which led to a price revolution and services that changed the face of the map in the French communications market. Niall, known in Europe as the "monopoly shaker," built ILIAD-FREE as a company that provides millions of French citizens with a fair, unlimited use of high-speed internet, landline and international telephone services for a fixed fee of € 30 per month.
+                        <br><br>
+                         The price of the package, which caused a shock and revolution in the French communications market, has not changed since the company was founded more than 10 years ago. ILIAD-FREE is currently setting up the new mobile network in France, which will operate under the brand "FREE". Xavier Niall is also the owner of Le Monde, France's leading press group.
+                    </p>
+                </article>
+                <article class="entrepreneurs">
+                    <h5>Eran Avraham
+                        <span> || </span>
+                        <span>Director, Partner and CEO</span>
+                    </h5>
+                    <p>
+                        A new immigrant from France. He has extensive managerial and financial experience in the field of communications abroad and in Israel and served as CEO of the French telecommunications company ILIAD. Under the FREE brand, the company established a communications network for high-speed internet services, fixed and international telephony and hundreds of television channels.
+                        The marketing strategy of FREE caused an earthquake in the French communications market for the benefit of millions of customers and competitors.
+                        Thanks to the achievements of the ILIAD under his direction, Michael was awarded the prestigious 2005 BFM Prize as the Best Young Director in France. In Israel, he was involved in the acquisition and recovery of Hot Communications.
+                    </p>
+                </article>
+                <article class="entrepreneurs">
+                    <h5> Esti Zohar
+                        <span> || </span>
+                        <span>Partner</span>
+                    </h5>
+                    <p>
+                        <b>Founders and owners of the NAF NAF fashion company, one of the leading clothing brands in Europe.
+                            NAF NAF has revolutionized fashion in the world while bringing the elite fashion to the general public</b>
+                    </p>
+                </article>
+            </section>
+            <button class="nav-list-mobile"><p></p><a href="#what-we-do-mobile">What are we doing?</a></button>
+            <section id="what-we-do-mobile">
+                <span class="line"><h3>What are we doing?</h3></span>
+                <span class="side-line"></span>
+                <span class="title-icon"></span>
+                <article>
+                    <p>
+                        Our mission is to revolutionize the <b>cellular</b> world in Israel. no less. For this purpose, we competed in the cellular frequencies tender of the Ministry of Communications and were licensed.
+                        We will compete with the existing cellular companies in order to bring about a <b>real</b> change in the standards of the cellular communications market in Israel. We are unique in that we are a company focused on the needs of the customer in the full sense of the word and its significance,
+                        rather than creating a cash flow to cover the debts taken by the shareholders in order to acquire the communications companies operating in the market.
+                    </p><br>
+                    <p>
+                        <b>We will provide the customer with a complete, clear and attractive package. </b>
+                        in addition to a range of advanced cellular services. The communications packages that will be marketed will be fair and easy to understand, without "asterisks" and without "small letters".
+                    </p><br>
+                    <p>
+                        We believe in an open and fair relationship between the customer and the cellular company while creating added value to our customers. We are loyal to our customers and do not view this as a contradiction to the economic interests of our shareholders.
+                        They prove this for many years in France. <br>
+                        We therefore commit ourselves to a competitive and equal price for every person and to provide quality service to our customers through innovative means.
+                    </p><br>
+                    <p>
+                        We set a goal to set new standards in the cellular communications market in Israel. We know how to maintain a company that maintains a low cost basket with a "flat" organizational structure and not wasteful. The big savings we invest back in the client. <br>
+                        We've done it successfully before. And we are certain that this time it will succeed.
+                    </p>
+                </article>
+            </section>
+            <button class="nav-list-mobile"><p></p><a href="#when-we-start-mobile">Start operating</a></button>
+            <section id="when-we-start-mobile">
+                <span class="line"><h3>When we'll start operating?</h3></span>
+                <span class="side-line"></span>
+                <span class="title-icon"></span>
+                <article>
+                    <p>
+                        The tender for cellular frequencies of the Ministry of Communications took place in the spring of 2011 and we were declared winners in the summer of 2011
+                        We are in the midst of preparations for the establishment of the new cellular company in all aspects of engineering, services and operations: establishment of technological and engineering infrastructures, information systems, establishment of marketing systems, sale, distribution and service, establishment of the website and more. At the same time we recruit the professional and operational staff.
+                    </p>
+                    <br>
+                    <p>
+                        <b>We plan to begin serving customers during 2012. <br>
+                            Worth the wait!
+                        </b>
+                    </p>
+                </article>
+            </section>
+            <button class="nav-list-mobile"><p></p><a href="#careers-mobile">Careers</a></button>
+            <section id="careers-mobile">
+                <span class="line"><h3>Careers</h3></span>
+                <span class="side-line"></span>
+                <span class="title-icon"></span>
+                <article>
+                    <h4>Join the pioneers of Golan Telecom</h4>
+                    <img src="images/careers.png">
+                    <p>
+                        We are looking for challenged and <b>talented</b> staff members and staff in a variety of roles and tasks. <br>
+                        If you would like to work with us, please send an <b>e-mail</b> with a resume to the Human Resources Department at the following address,
+                        stating the job title: <b>hr@gt.co.il</b>
+                        We apologize in advance for the length of the process due to multiple requests to join the team.
+                    </p>
+                    <div class="clear"></div>
+                    <h4>our open positions</h4>
+                </article>
+                <article>
+                    <span class="job-num">1</span>
+                    <span class="job-property">Job category |</span><span class="job-val">Information Systems</span>
+                    <span class="job-property">Job title |</span><span class="job-val">Billing supervisor</span>
+                    <br>
+                    <span class="job-desc">Responsibilities |</span>
+                    <p class="job-desc-val">
+                        Management of the system supplier, project management, implementation of the system, testing, ongoing operation of the system (entering price lists, checking invoices), implementation of new services and marketing proposals in the system. The billing supervisor should be familiar with the matter
+                        Deepens the capabilities of the systems.
+                    </p>
+                    <br>
+                    <span class="job-desc">Qualifications |</span>
+                    <p class="job-desc-val">
+                        Needs fluent French, has a technological approach, has good communication skills and teamwork, assertive, high learning abilities,
+                        energetic and willing to work hard and challenging. Flexible hours may be needed during stress events.
+                    </p>
+                </article>
+                <article>
+                    <span class="job-num">2</span>
+                    <span class="job-property">Job category |</span><span class="job-val">Information Systems</span>
+                    <span class="job-property">Job title |</span><span class="job-val">IT infrastructure engineer</span><br>
+                    <span class="job-desc">Responsibilities |</span>
+                    <p class="job-desc-val">
+                        Responsibilities for server rooms (external), communications, operating systems, survivability management, information security,
+                        management of workspaces, responsibility for employee end equipment, technical support.</p>
+                    <br>
+                    <span class="job-desc">Qualifications |</span>
+                    <p class="job-desc-val">
+                        5-2 years of experience in the field of IT infrastructure, independent, self-learning, high motivation and willingness to work hard and challenging, services and excellent staff.
+                    </p>
+                </article>
+                <article>
+                    <span class="job-num">3</span>
+                    <span class="job-property">Job category |</span><span class="job-val">Information Systems</span>
+                    <span class="job-property">Job title |</span><span class="job-val">PHP Developer</span><br>
+                    <span class="job-desc">Qualifications |</span>
+                    <p class="job-desc-val">
+                        Experience in PHP programming (not WordPress / Joomla etc.) but actual programming).
+                        <br>Experience in Object Oriented Development
+                        <br>MySQL knowledge
+                        <br>Knowledge in JavaScript / HTML / 5 / CSS / 3
+                        <br>BA in relevant field
+                        <br>Knowledge in NoSQL - an advantage
+                    </p>
+                    <span class="red-line"></span>
+                </article>
+                <article>
+                    <span class="job-num">1</span>
+                    <span class="job-property">Job category |</span><span class="job-val">Engineering</span>
+                    <span class="job-property">Job title |</span><span class="job-val">Core Network engineer</span>
+                    <br>
+                    <span class="job-desc">Responsibilities |</span>
+                    <p class="job-desc-val">
+                        >> Leading the design and construction of the core of the cellular network: cellular components, IP, advanced services, physical infrastructures, connectivity <br>
+                        >> Partner in the process of choosing solutions and suppliers <br>
+                        >> Implementation of long-term planning of various network components, capacitance planning, survivability and quality of service <br>
+                        >> Integrating new technology capabilities into intensive contact with system vendors
+                    </p>
+                    <br>
+                    <span class="job-desc">Qualifications |</span>
+                    <p class="job-desc-val">
+                        >> 3-5 years of experience in advanced telephony and cellular networks <br>
+                        >> 3-5 years of experience in IP networks <br>
+                        >> Familiarity with the network components of at least one of the leading providers in the field of cellular telephony <br>
+                        >> Excellent teamwork and excellent integration skills in a small construction team <br>
+                        >> Willingness to establish intensive and challenging activities
+                    </p>
+                </article>
+                <article>
+                    <span class="job-num">2</span>
+                    <span class="job-property">Job category |</span><span class="job-val">Engineering</span>
+                    <span class="job-property">Job title |</span><span class="job-val">Radio design engineer</span>
+                    <br>
+                    <span class="job-desc">Responsibilities |</span>
+                    <p class="job-desc-val">
+                        >> Perform radio planning for the process of purchasing base stations and long-term network planning <br>
+                        >> Responsibility for system performance <br>
+                        >> Making daily decisions in defining search areas and setting up base stations,
+                        Intensive support for the BS base station deployment process
+                        >> Radio network features, tools development and operation, full professional control of the capabilities of the radio system <br>
+                        >> Ongoing analysis of network performance
+                    </p>
+                    <br>
+                    <span class="job-desc">Qualifications |</span>
+                    <p class="job-desc-val">
+                        >> 3-5 years of experience as a radio design engineer using UMTS or CDMA technology <br>
+                        >> Familiarity with relevant cellular system components, radio feature activation and performance analysis <br>
+                        >> Excellent team work and excellent integration skills in a small construction team <br>
+                        >> Willingness to work intensively and competitively
+                    </p>
+                </article>
+            </section>
+            <button class="nav-list-mobile"><p></p><a href="#contact-us-mobile">Contact Us</a></button>
+            <section id="contact-us-mobile">
+                <span class="line"><h3>Wanna take part in the revolution?</h3></span>
+                <span class="side-line"></span>
+                <span class="title-icon"></span>
+                <form>
+                </form>
+            </section>
+        </nav>
+        <!-- /END OF NAV AND MAIN VERSION FOR MOBILE-->
         <main>
             <section id="what-we-do">
                 <span class="line"><h3>What are we doing?</h3></span>
