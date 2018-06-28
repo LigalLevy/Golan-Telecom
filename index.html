@@ -6,6 +6,7 @@
     <title>Golan Telecom</title>
     <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
     <link rel="stylesheet"  href="includes/style.css">
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">-->
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
@@ -16,7 +17,7 @@
             <a class="lang" href="en-index.html"><b>English</b></a>
         </header>
         <section id="golan-telecom-top">
-            <span class="line"><h3>גולן טלקום, השחקן החדש בעולם הסלולר</h3></span>
+            <h1>גולן טלקום, השחקן החדש בעולם הסלולר</h1>
             <span class="side-line"></span>
             <span class="title-icon"></span>
             <article>
@@ -323,14 +324,60 @@
                 <span class="line"><h3>רוצים לקחת חלק במהפכה?</h3></span>
                 <span class="side-line"></span>
                 <span class="title-icon"></span>
-                <form>
-                </form>
+                <section>
+                    <form>
+                        <label>אני</label>
+                        <input type="text" placeholder="שם/חברה">
+                        <input type="text" placeholder="חברה">
+
+                        <label>ניתן להשיג אותי:</label>
+                        <input type="email" placeholder="E-Mail">
+                        <input type="tel" placeholder="נייד">
+
+                        <span>היום אני מנוי של:</span>
+                        <input type="radio" name="" value="spain">
+                        <label >סלקום</label>
+                        <input type="radio" name="" value="ashkenaz">
+                        <label>פלאפון</label>
+                        <input type="radio" name="interests[]" value="else">
+                        <label>אורנג'</label>
+                        <input type="radio" name="interests[]" value="else">
+                        <label>מירס</label>
+
+                        <br>
+
+                        <span>אני לקוח:</span>
+                        <input type="radio" name="gender" value="female">
+                        <label>מרוצה</label>
+                        <input type="radio" name="gender" value="male">
+                        <label>לא מרוצה</label>
+
+                        <label>החשבון האחרון שלי:</label>
+                        <input type="number" placeholder="רשום סכום">
+                        <br>
+
+                        <span>מעוניין ש:</span>
+                        <label>[סמן כל מה שמתאים לך]</label>
+                        <input type="checkbox" name="interests[]" value="spain">
+                        <label >להיות בין ראשוני הלקוחות</label>
+                        <input type="checkbox" name="interests[]" value="ashkenaz">
+                        <label>להתנסות בשירותכם החדשים לכשיופעלו</label>
+                        <input type="checkbox" name="interests[]" value="else">
+                        <label>צרו עימי קשר</label>
+
+                        <input type="submit" value="שלח">
+                        <p>* לתשומת לבך אנו מתנצלים על משך זמן המענה עקב ריבוי הפניות</p>
+
+
+
+                    </form>
+                </section>
             </section>
         </nav>
         <!-- /END OF NAV AND MAIN VERSION FOR MOBILE-->
         <main>
             <section id="what-we-do">
-                <span class="line"><h3>מה אנחנו עושים?</h3></span>
+                <h1>מה אנחנו עושים?</h1>
                 <span class="side-line"></span>
                 <span class="title-icon"></span>
                 <article>
@@ -352,7 +399,7 @@
             </section>
             <span class="boundary-line"></span>
             <section id="who-are-we">
-                <span class="line"><h3>מי אנחנו?</h3></span>
+                <h1>מי אנחנו?</h1>
                 <span class="side-line"></span>
                 <span class="title-icon"></span>
                 <article>
@@ -400,7 +447,7 @@
             </section>
             <span class="boundary-line"></span>
             <section id="when-we-start">
-                <span class="line"><h3>מתי נתחיל לפעול?</h3></span>
+                <h1>מתי נתחיל לפעול?</h1>
                 <span class="side-line"></span>
                 <span class="title-icon"></span>
                 <article>
@@ -418,7 +465,7 @@
             </section>
             <span class="boundary-line"></span>
             <section id="careers">
-                <span class="line"><h3>דרושים</h3></span>
+                <h1>דרושים</h1>
                 <span class="side-line"></span>
                 <span class="title-icon"></span>
                 <article>
@@ -516,12 +563,67 @@
             </section>
             <span class="boundary-line"></span>
             <section id="contact-us">
-                <span class="line"><h3>רוצים לקחת חלק במהפכה?</h3></span>
+                <h1>רוצים לקחת חלק במהפכה?</h1>
                 <span class="side-line"></span>
                 <span class="title-icon"></span>
-                <form>
+                <section>
+                    <form>
+                        <div class="form-group row pt-lg-5 pb-lg-5 pt-5">
+                            <div class="col-sm-12 col-sm-5 offset-md-2">
+                                <label>אני</label>
+                                <input type="text" name="username" placeholder="שם/חברה">
+                                <input type="text" name="company" placeholder="חברה">
+                            </div>
+                        </div>
+
+                    <label>אני</label>
+                    <input type="text" name="username" placeholder="שם/חברה">
+                    <input type="text" name="company" placeholder="חברה">
+
+                    <label>ניתן להשיג אותי:</label>
+                    <input type="email" name="email" placeholder="E-Mail">
+                    <input type="tel" name="phone" placeholder="נייד">
+                    <br>
+
+                    <span>היום אני מנוי של:</span>
+                    <input type="radio" name="subscription" value="cellcom">
+                    <label >סלקום</label>
+                    <input type="radio" name="subscription" value="pelephone">
+                    <label>פלאפון</label>
+                    <input type="radio" name="subscription" value="orange">
+                    <label>אורנג'</label>
+                    <input type="radio" name="subscription" value="mirs">
+                    <label>מירס</label>
+
+                    <br>
+
+                    <span>אני לקוח:</span>
+                    <input type="radio" name="satisfaction" value="yes">
+                    <label>מרוצה</label>
+                    <input type="radio" name="satisfaction" value="no">
+                    <label>לא מרוצה</label>
+
+                    <label><span>החשבון האחרון שלי:</span></label>
+                    <input type="number" name="bill" placeholder="רשום סכום">
+                    <br>
+
+                    <span>מעוניין ש:</span>
+                    <label>[סמן כל מה שמתאים לך]</label>
+                    <br>
+                    <input type="checkbox" name="interests[]" value="first-customer">
+                    <label >להיות בין ראשוני הלקוחות</label><br>
+                    <input type="checkbox" name="interests[]" value="try-services">
+                    <label>להתנסות בשירותכם החדשים לכשיופעלו</label><br>
+                    <input type="checkbox" name="interests[]" value="contact-me">
+                    <label>צרו עימי קשר</label>
+
+                    <input type="submit" value="שלח">
+                    <br>
+                    <p>* לתשומת לבך אנו מתנצלים על משך זמן המענה עקב ריבוי הפניות</p>
+
 
                 </form>
+                </section>
             </section>
         </main>
     </div>

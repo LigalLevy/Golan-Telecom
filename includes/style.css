@@ -48,12 +48,20 @@ ul {
         background-color: #d9d9d9;
     }
 
-    h3 {
+    h1 {
+        width: 538px;
+        height: 48px;
+        background: url(../images/red-line.png);
         line-height: 48px;
         font-size: 1.538em;
         direction: rtl;
         color: white;
-        margin-right: 15px;
+        position: relative;
+        right: 50px;
+        top: 70px;
+        z-index: 13;
+        box-shadow: 1px 0px 20px 0px #858588;
+        padding-right: 15px;
     }
 
     nav {
@@ -192,14 +200,7 @@ ul {
     }
 
     .line {
-        background: url(../images/red-line.png);
-        display: inline-block;
-        width: 553px;
-        height: 48px;
-        position: relative;
-        right: 50px;
-        z-index: 13;
-        box-shadow: 1px 0px 20px 0px #858588;
+
     }
 
     .side-line {
@@ -559,7 +560,7 @@ ul {
 
     #who-are-we .line { top: 75px; }
 
-    #who-are-we .side-line { top: 27px; }
+    #who-are-we .side-line { top: 22px; }
 
     #who-are-we .title-icon{
         background-image: url(../images/whoarewe.png);
@@ -594,7 +595,7 @@ ul {
 
     #when-we-start .line { top: 61px; }
 
-    #when-we-start .side-line { top: 14px; }
+    #when-we-start .side-line { top: 22px; }
 
     #when-we-start .title-icon{
         background-image: url(../images/power.png);
@@ -633,7 +634,7 @@ ul {
 
     #contact-us .line { top: 68px; }
 
-    #contact-us .side-line { top: 20px; }
+    #contact-us .side-line { top: 22px; }
 
     #contact-us .title-icon{
         background-image: url(../images/shtrudel.png);
@@ -681,6 +682,31 @@ ul {
     #nav-mobile {
         display: none;
     }
+
+    #contact-us section {
+        direction: rtl;
+        background: url(../images/form-back.png) no-repeat;
+        width: 597px;
+        height: 511px;
+        position: relative;
+        bottom: 65px;
+        left: 37px;
+    }
+
+    form {
+        height: 427px;
+        width: 563px;
+        margin: auto;
+        padding: 28px 50px 0px 0px;
+        color: #dedede;
+    }
+
+    form span {
+        font-weight: bold;
+        text-decoration: underline;
+        font-size: 1.23em;
+    }
+
 
 
 
