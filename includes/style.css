@@ -689,6 +689,15 @@ ul {
         left: 37px;
     }
 
+    #form-back > span {
+        background: url(../images/form-rounds.png) no-repeat;
+        height: 138px;
+        width: 167px;
+        display: block;
+        position: relative;
+        right: 437px;
+        top: 44px;
+    }
     form {
         height: 427px;
         width: 563px;
