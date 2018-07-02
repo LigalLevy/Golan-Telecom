@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Golan Telecom</title>
-    <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik">
     <link rel="stylesheet"  href="includes/style.css">
-    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">-->
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
@@ -566,62 +566,52 @@
                 <h1>רוצים לקחת חלק במהפכה?</h1>
                 <span class="side-line"></span>
                 <span class="title-icon"></span>
-                <section>
+                <section id="form-back">
                     <form>
-                        <div class="form-group row pt-lg-5 pb-lg-5 pt-5">
-                            <div class="col-sm-12 col-sm-5 offset-md-2">
-                                <label>אני</label>
-                                <input type="text" name="username" placeholder="שם/חברה">
-                                <input type="text" name="company" placeholder="חברה">
-                            </div>
-                        </div>
-
-                    <label>אני</label>
-                    <input type="text" name="username" placeholder="שם/חברה">
-                    <input type="text" name="company" placeholder="חברה">
-
-                    <label>ניתן להשיג אותי:</label>
-                    <input type="email" name="email" placeholder="E-Mail">
-                    <input type="tel" name="phone" placeholder="נייד">
-                    <br>
-
-                    <span>היום אני מנוי של:</span>
-                    <input type="radio" name="subscription" value="cellcom">
-                    <label >סלקום</label>
-                    <input type="radio" name="subscription" value="pelephone">
-                    <label>פלאפון</label>
-                    <input type="radio" name="subscription" value="orange">
-                    <label>אורנג'</label>
-                    <input type="radio" name="subscription" value="mirs">
-                    <label>מירס</label>
-
-                    <br>
-
-                    <span>אני לקוח:</span>
-                    <input type="radio" name="satisfaction" value="yes">
-                    <label>מרוצה</label>
-                    <input type="radio" name="satisfaction" value="no">
-                    <label>לא מרוצה</label>
-
-                    <label><span>החשבון האחרון שלי:</span></label>
-                    <input type="number" name="bill" placeholder="רשום סכום">
-                    <br>
-
-                    <span>מעוניין ש:</span>
-                    <label>[סמן כל מה שמתאים לך]</label>
-                    <br>
-                    <input type="checkbox" name="interests[]" value="first-customer">
-                    <label >להיות בין ראשוני הלקוחות</label><br>
-                    <input type="checkbox" name="interests[]" value="try-services">
-                    <label>להתנסות בשירותכם החדשים לכשיופעלו</label><br>
-                    <input type="checkbox" name="interests[]" value="contact-me">
-                    <label>צרו עימי קשר</label>
-
-                    <input type="submit" value="שלח">
-                    <br>
-                    <p>* לתשומת לבך אנו מתנצלים על משך זמן המענה עקב ריבוי הפניות</p>
-
-
+                        <section>
+                            <span>אני</span>
+                            <br>
+                            <input type="text" name="username" placeholder="שם/חברה">
+                            <input type="text" name="company" placeholder="חברה">
+                        </section>
+                        <section>
+                            <span>ניתן להשיג אותי:</span>
+                            <input type="email" name="email" placeholder="E-Mail">
+                            <input type="tel" name="phone" placeholder="נייד">
+                        </section>
+                        <div class="clear"></div>
+                        <br>
+                        <section>
+                            <span>היום אני מנוי של:</span>
+                            <label><input type="radio" name="subscription" value="cellcom"> סלקום</label>
+                            <label><input type="radio" name="subscription" value="pelephone" placeholder=" ">  פלאפון</label>
+                            <label><input type="radio" name="subscription" value="orange"> אורנג' </label>
+                            <label><input type="radio" name="subscription" value="mirs"> מירס</label>
+                        </section>
+                        <br>
+                        <section>
+                            <span>אני לקוח:</span>
+                            <label><input type="radio" name="satisfaction" value="yes"> מרוצה </label>
+                            <label><input type="radio" name="satisfaction" value="no"> לא מרוצה </label>
+                            <span>החשבון האחרון שלי:</span>
+                            <input type="text" id="bill" name="bill" placeholder="רשום סכום">
+                            <br>
+                        </section>
+                        <section>
+                            <span>מעוניין ש:</span>
+                            <span>[ סמן כל מה שמתאים לך ]</span>
+                            <br>
+                            <input type="checkbox" name="interests[]" value="first-customer">
+                            <label>להיות בין ראשוני הלקוחות</label>
+                            <br>
+                            <input type="checkbox" name="interests[]" value="try-services">
+                            <label>להתנסות בשירותכם החדשים לכשיופעלו</label>
+                            <br>
+                            <input type="checkbox" name="interests[]" value="contact-me">
+                            <label>צרו עימי קשר</label>
+                        </section>
+                        <input type="submit" value="שלח">
+                        <p>* לתשומת לבך אנו מתנצלים על משך זמן המענה עקב ריבוי הפניות</p>
                 </form>
                 </section>
             </section>

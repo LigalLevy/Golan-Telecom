@@ -675,15 +675,11 @@ ul {
         bottom: 18px;
     }
 
-    #who-are-we-mobile, #when-we-start-mobile, #contact-us-mobile, #what-we-do-mobile, #careers-mobile {
+    #who-are-we-mobile, #when-we-start-mobile, #contact-us-mobile, #what-we-do-mobile, #careers-mobile, #nav-mobile {
         display: none;
     }
 
-    #nav-mobile {
-        display: none;
-    }
-
-    #contact-us section {
+    #form-back {
         direction: rtl;
         background: url(../images/form-back.png) no-repeat;
         width: 597px;
@@ -707,10 +703,98 @@ ul {
         font-size: 1.23em;
     }
 
+    form section:first-child, form section:nth-child(2) {
+        height: 87px;
+        width: 280px;
+        float: right;
+    }
+
+    input[type=text], input[type=email], input[type=tel] {
+        width: 193px;
+        margin: 7.5px 0px;
+        padding: 3.5px 8px 3.5px 0px;
+        border-radius: 14px;
+        border-style: unset;
+        box-shadow: inset 0px 0px 4px 1px #858588;
+    }
+
+    input[type=radio] {
+        -webkit-appearance: checkbox;
+        margin: 0 10px 0 0;
+        content: " ";
+        display: inline-block;
+        position: relative;
+        top: 5px;
+        width: 22px;
+        height: 22px;
+        background-color: ghostwhite;
+        box-shadow: inset 0px 0px 4px 1px #858588;
+    }
+
+    input[type=checkbox] {
+        width: 22px;
+        height: 22px;
+    }
+
+    input[type=submit] {
+        background: url(../images/form-submit.png) no-repeat;
+        width: 163px;
+        height: 87px;
+        border-style: none;
+        position: relative;
+        bottom: 30px;
+        right: 50px;
+        line-height: 87px;
+        font-size: 1.823em;
+        font-weight: bold;
+        color: white;
+    }
+
+    input[type=submit]:focus {
+        outline: 0;
+    }
+
+    form section:nth-child(5),form section:nth-child(7) {
+        margin-top: 10px;
+
+    }
+
+    form section:nth-child(8) {
+        margin-top: 20px;
+        display: inline-block;
+    }
+
+    form section:nth-child(8) label {
+        background-color: snow;
+        color: #484848;
+        font-size: 13px;
+        padding: 3.5px 5px 3.5px 0;
+        width: 233px;
+        vertical-align: super;
+        display: inline-block;
+        border-radius: 10px 0px 0px 10px;
+        margin: 4.5px 7px 4.5px 0;
+    }
+
+    form section:nth-child(7) > span:nth-child(4) {
+        margin-right: 20px;
+    }
+
+    form section:nth-child(7) > input:nth-child(5) {
+        width: 83px;
+        margin-right: 8px;
+    }
+
+    form section:nth-child(8) > span:nth-child(2) {
+        text-decoration: none;
+        font-weight: normal;
+        font-size: 1em;
+        margin-right: 73px;
+    }
 
 
 
-} /*END of media for desktop */
+}/*END of media for desktop */
 
 /* WIDE MOBILE LAYOUT (LANDSCAPE/480PX)
 ----------------------------------------------- */
@@ -955,3 +1039,4 @@ ul {
     }
 
 }
+
