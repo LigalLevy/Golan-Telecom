@@ -1044,6 +1044,10 @@ ul {
         direction: rtl;
     }
 
+    #en-version {
+        direction:ltr !important;
+    }
+
     #en-version #nav-mobile article {
         direction:ltr;
     }

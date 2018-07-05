@@ -393,38 +393,6 @@
                     <img src="images/logo_free.png">
                 </article>
                 <section id="entrep-area"></section>
-                <!--<article class="entrepreneurs">
-                    <h5>Ronen Shmueli
-                        <span> || </span>
-                        <span>Partner</span>
-                    </h5>
-                    <p>
-                        A French resident, has a reputation as one of the most successful and leading telecommunications entrepreneurs in Europe. Entrepreneur and controlling shareholder of the telecommunications giant ILIAD-FREE, which led to a price revolution and services that changed the face of the map in the French communications market. Niall, known in Europe as the "monopoly shaker," built ILIAD-FREE as a company that provides millions of French citizens with a fair, unlimited use of high-speed internet, landline and international telephone services for a fixed fee of € 30 per month.
-                        <br><br>
-                         The price of the package, which caused a shock and revolution in the French communications market, has not changed since the company was founded more than 10 years ago. ILIAD-FREE is currently setting up the new mobile network in France, which will operate under the brand "FREE". Xavier Niall is also the owner of Le Monde, France's leading press group.
-                    </p>
-                </article>
-                <article class="entrepreneurs">
-                    <h5>Eran Avraham
-                        <span> || </span>
-                        <span>Director, Partner and CEO</span>
-                    </h5>
-                    <p>
-                        A new immigrant from France. He has extensive managerial and financial experience in the field of communications abroad and in Israel and served as CEO of the French telecommunications company ILIAD. Under the FREE brand, the company established a communications network for high-speed internet services, fixed and international telephony and hundreds of television channels.
-                        The marketing strategy of FREE caused an earthquake in the French communications market for the benefit of millions of customers and competitors.
-                        Thanks to the achievements of the ILIAD under his direction, Michael was awarded the prestigious 2005 BFM Prize as the Best Young Director in France. In Israel, he was involved in the acquisition and recovery of Hot Communications.
-                    </p>
-                </article>
-                <article class="entrepreneurs">
-                    <h5> Esti Zohar
-                        <span> || </span>
-                        <span>Partner</span>
-                    </h5>
-                    <p>
-                        <b>Founders and owners of the NAF NAF fashion company, one of the leading clothing brands in Europe.
-                        NAF NAF has revolutionized fashion in the world while bringing the elite fashion to the general public</b>
-                    </p>
-                </article>-->
             </section>
             <span class="boundary-line"></span>
             <section id="when-we-start">
@@ -558,14 +526,58 @@
                 <span class="line"><h3>Wanna take part in the revolution?</h3></span>
                 <span class="side-line"></span>
                 <span class="title-icon"></span>
-                <form>
-
-                </form>
+                <section id="form-back">
+                    <form>
+                        <section>
+                            <span>Me</span>
+                            <br>
+                            <input type="text" name="username" placeholder="Name/Company">
+                            <input type="text" name="company" placeholder="Company">
+                        </section>
+                        <section>
+                            <span>You can reach me on:</span>
+                            <input type="email" name="email" placeholder="E-Mail">
+                            <input type="tel" name="phone" placeholder="Phone">
+                        </section>
+                        <div class="clear"></div>
+                        <br>
+                        <section>
+                            <span>Today I'm subscribed to:</span>
+                            <label><input type="radio" name="subscription" value="cellcom"> Cellcom</label>
+                            <label><input type="radio" name="subscription" value="pelephone" placeholder=" "> Pelephone</label>
+                            <label><input type="radio" name="subscription" value="orange"> Orange </label>
+                            <label><input type="radio" name="subscription" value="mirs"> Mirs </label>
+                        </section>
+                        <br>
+                        <section>
+                            <span>I'm a customer:</span>
+                            <label><input type="radio" name="satisfaction" value="yes"> Satisfied </label>
+                            <label><input type="radio" name="satisfaction" value="no"> Unsatisfied </label>
+                            <span>My last bill:</span>
+                            <input type="text" id="bill" name="bill" placeholder="Write bills:">
+                            <br>
+                        </section>
+                        <section>
+                            <span>Interested in:</span>
+                            <span>[ Mark your options ]</span>
+                            <br>
+                            <input type="checkbox" name="interests[]" value="first-customer">
+                            <label>Be among the first customers</label>
+                            <br>
+                            <input type="checkbox" name="interests[]" value="try-services">
+                            <label>Experiment with the new service when they operated</label>
+                            <br>
+                            <input type="checkbox" name="interests[]" value="contact-me">
+                            <label>Contact me</label>
+                        </section>
+                        <input type="submit" value="Submit">
+                        <p>*Please note that we apologize for the delay in response due to multiple referrals</p>
+                    </form>
+                    <span></span>
+                </section>
             </section>
         </main>
     </div>
-
-
 
     <script src="includes/scripts.js"></script>
     <script>
@@ -573,7 +585,5 @@
             fetchJson("includes/entrep-en.json");
         })();
     </script>
-
-
 </body>
 </html>
