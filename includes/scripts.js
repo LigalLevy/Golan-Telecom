@@ -94,3 +94,31 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
+
+/* END OF MODAL */
+
+
+//extract data from JSON file
+$(function(){
+    fetchJson();
+})
+
+var sHTML = "";
+function fetchJson(){
+    $.getJSON("includes/entrep.json",function(data){
+        $.each(data, function(index,value) {
+            sHTML += "<article class=" + '"entrepreneurs"' + ">";
+            sHTML += "<h5>" + value.name;
+            sHTML += "<span> || </span>";
+            sHTML += "<span>" + value.job + "</span></h5>";
+            sHTML += "<p>" + value.desc[0] + "</p>";
+            if(value.desc.length > 1) {
+                sHTML += "<br><p>" + value.desc[1] + "</p>";
+            }
+            sHTML += "</article>";
+        });
+
+        $('#entrep-area').append(sHTML);
+    });
+}
+
