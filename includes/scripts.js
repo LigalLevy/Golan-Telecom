@@ -99,13 +99,11 @@ window.onclick = function(event) {
 
 
 //extract data from JSON file
-$(function(){
-    fetchJson();
-})
+
 
 var sHTML = "";
-function fetchJson(){
-    $.getJSON("includes/entrep.json",function(data){
+function fetchJson(fileName){
+    $.getJSON(fileName,function(data){
         $.each(data, function(index,value) {
             sHTML += "<article class=" + '"entrepreneurs"' + ">";
             sHTML += "<h5>" + value.name;
