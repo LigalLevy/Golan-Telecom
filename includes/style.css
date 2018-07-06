@@ -140,6 +140,42 @@ ul {
         font-size: 0.99em;
     }
 
+    #en-version form {
+        padding: 28px 0px 0px 55px;
+    }
+
+    #en-version #form-back > span {
+        left: 0;
+    }
+
+    #en-version input[type=text], #en-version input[type=email], #en-version input[type=tel] {
+        padding: 3.5px 0px 3.5px 8px;
+    }
+
+    #en-version input[type=radio] {
+        margin: 0 0 0 10px;
+    }
+
+    #en-version form section:nth-child(7) > span:nth-child(4) {
+        margin-left: 20px;
+        margin-right: 0;
+    }
+
+    #en-version form section:nth-child(7) > input:nth-child(5) {
+        margin-right: 0;
+        margin-left: 14px;
+    }
+
+    #en-version form section:nth-child(8) label {
+        border-radius: 0px 10px 10px 0px;
+        margin: 4.5px 0px 4.5px 7px;
+    }
+
+    #en-version input[type=submit] {
+        bottom: 31px;
+        right: -57px;
+    }
+
     .selected-nav {
         background-color: #3b4355;
     }
