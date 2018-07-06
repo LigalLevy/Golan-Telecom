@@ -20,8 +20,16 @@ header, nav, main, section, article ,footer {display:block;}
     font-size: 11px;
 }
 
-#en-version nav {
+#en-version main, #en-version aside article,
+#en-version #golan-telecom-top article p:first-child, #en-version #golan-telecom-top article p:nth-child(3),
+#en-version #golan-telecom-top article p:nth-child(4), #en-version #golan-telecom-top article p:nth-child(4) span, #en-version article,
+#en-version #what-we-do article, #en-version #when-we-start article, #en-version #who-are-we article , #en-version #careers article, #en-version #form-back
+{
     direction: ltr;
+}
+
+#en-version #golan-telecom-top article p:first-child {
+    margin-left: 6px;
 }
 
 a {
@@ -69,7 +77,7 @@ ul {
         height: 188px;
         margin-right: 42px;
         position: fixed;
-        right: 179px;
+        right: 14.2%;
         top: 206px;
         z-index: 10;
         direction: rtl;
@@ -199,10 +207,6 @@ ul {
         background: url(../images/at-hover.png) no-repeat;
     }
 
-    .line {
-
-    }
-
     .side-line {
         background: url(../images/red-line-back.png);
         display: block;
@@ -233,8 +237,6 @@ ul {
         right: 1px;
         z-index: 0;
     }
-
-
 
     aside {
         width: 226px;
@@ -449,12 +451,58 @@ ul {
     }
 
     #en-version #golan-telecom-top article p:nth-child(4) {
-        direction: ltr;
-        right: -54px;
+        left: 155px;
     }
 
-    #en-version #golan-telecom-top article span{
+    #en-version #golan-telecom-top article span:nth-child(2) {
         margin-left: 1px;
+        position: relative;
+        left: 323px;
+    }
+
+    #en-version #golan-telecom-top article p:nth-child(3) {
+        margin-left: 6px;
+        margin-bottom: 45px;
+        font-size: 2.34em;
+    }
+
+    #en-version #golan-telecom-top article span {
+        margin: 0;
+    }
+
+    #en-version #golan-telecom-top article a {
+        position: relative;
+        left: 386px;
+        padding: 10px 24px;
+    }
+
+    #en-version #who-are-we > article > img:nth-child(6) {
+        left: 392px;
+    }
+
+    #en-version p {
+        font-size: 1.1em;
+    }
+
+    #en-version aside h5 {
+        padding-left: 36px;
+        margin-left: 49px;
+        direction: ltr;
+        background-position: unset;
+        padding-right: 0px;
+    }
+
+    #en-version aside > ul {
+        direction: ltr;
+        width: 177px;
+    }
+
+    #en-version #nav-list {
+        direction: ltr;
+    }
+
+    #en-version nav {
+        right: 10.8%;
     }
 
     #golan-telecom-top article p:nth-child(4){
@@ -517,7 +565,6 @@ ul {
     .entrepreneurs {
         margin-bottom: 30px;
     }
-
 
 
     #golan-telecom-top .line { top: 76px; }
@@ -837,9 +884,8 @@ ul {
 
     #golan-telecom-top article p:first-child,
     #golan-telecom-top article span:nth-child(2),
-    #golan-telecom-top h3,
-    aside,
-    .lang{
+    #golan-telecom-top h3, #golan-telecom-top h1,
+    aside, .lang{
         display: none;
     }
 
@@ -1042,10 +1088,6 @@ ul {
         width: 70%;
         margin: 0 auto;
         direction: rtl;
-    }
-
-    #en-version {
-        direction:ltr !important;
     }
 
     #en-version #nav-mobile article {

@@ -39,7 +39,7 @@ for (i = 0; i < acc.length; i++) {
 }
 
 /*SMOOTH ANIMATE*/
-$(document).ready(function(){
+$(function(){
     // Add smooth scrolling to all links
     $("a").on('click', function(event) {
         if ((screen.width>=900)) {
@@ -94,13 +94,10 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
-
 /* END OF MODAL */
 
 
 //extract data from JSON file
-
-
 var sHTML = "";
 function fetchJson(fileName){
     $.getJSON(fileName,function(data){
