@@ -724,20 +724,17 @@ ul {
         top: -110px;
     }
 
-    .job-property , .job-desc{
-        color: black;
-    }
 
-    .job-val {
-        color: #ed1c24;
-        margin-left: 20px;
-        margin-bottom: 24px;
-    }
-
-    .job-num {
+    .job span:first-child {
         color: #262f43;
         font-size: 3.077em;
         margin-left: 20px;
+    }
+
+    .job span:nth-child(2), .job span:nth-child(4) {
+        position: relative;
+        bottom: 18px;
+        color: black;
     }
 
     #careers > article {
@@ -753,9 +750,12 @@ ul {
         margin-top: 22px;
     }
 
-    .job-property , .job-val{
+    .job span:nth-child(3), .job span:nth-child(5){
         position: relative;
         bottom: 18px;
+        color: #ed1c24;
+        margin-left: 20px;
+        margin-bottom: 24px;
     }
 
     #who-are-we-mobile, #when-we-start-mobile, #contact-us-mobile, #what-we-do-mobile, #careers-mobile, #nav-mobile {
