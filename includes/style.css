@@ -1039,7 +1039,7 @@ ul {
 
     #nav-mobile article img {
         display: block;
-        margin: 0 auto;
+        margin: 9px auto 0;
     }
 
     #nav-mobile article span:first-child {

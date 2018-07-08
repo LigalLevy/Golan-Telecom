@@ -14,11 +14,44 @@
     }
 
     //get data from DB
-    $query = "SELECT * FROM tb_careers1_230 WHERE category='מערכות מידע'";
-    $result = mysqli_query($connection, $query);
-    if(!$result) {
-        die("DB query failed.");
+    $query1 = "SELECT * FROM tb_careers1_230 WHERE category='מערכות מידע'";
+    $query2 = "SELECT * FROM tb_careers1_230 WHERE category='הנדסה'";
+
+    function selectQuery ($connection , $query) {
+        $result = mysqli_query($connection, $query);
+        if(!$result) {
+            die("DB query failed.");
+        }
+
+        return $result;
     }
+
+    function getCareers($result) {
+        $count = 0;
+
+        //use return data (if any)
+        while($row = mysqli_fetch_assoc($result)) {
+            //results are in associative array. keys are cols names
+            //output data from each row
+            $count++;
+            echo "<article class=\"job\">";
+            echo "<span>" . $count . "</span>";
+            echo "<span>" . "תחום | " . "</span>" . "<span>" . $row["category"] . "</span>";
+            echo "<span>" . "התפקיד | " . "</span>" . "<span>" . $row["title"] . "</span>";
+            echo "<br>";
+            if ($row["responsibilities"] != null) {
+                echo "<span class=\"job-desc\">תיאור | </span>";
+                echo "<p class=\"job-desc-val\">" . $row["responsibilities"] . "</p><br>";
+            }
+            echo "<span class=\"job-desc\">דרישות | </span>";
+            echo "<p class=\"job-desc-val\">" . $row["qualifications"] . "</p>";
+            echo "</article>";
+        }
+
+        //release returned data
+        mysqli_free_result($result);
+    }
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -168,39 +201,11 @@
                     <br><br>
                     פעילותנו בחו"ל ובישראל מול חברות תקשורת ענקיות ושבעות, זכתה להצלחה ולהערכה רבה כאלטרנטיבה חדשנית, תחרותית ונועזת. בעלי הקבוצה שלנו, קסביה ניאל ומיכאל גולן נודעים כיצרני תחרות אגרסיבית למונופולים בשוק התקשורת בצרפת.
                 </p>
+                <img src="images/people.png">
                 <div class="clear"></div>
                 <h4>היזמים</h4>
             </article>
-            <article class="entrepreneurs">
-                <h5>רונן שמואלי
-                    <span> || </span>
-                    <span>שותף</span>
-                </h5>
-                <p>
-                    תושב צרפת, בעל מוניטין כאחד היזמים המצליחים והמובילים בתחום התקשורת באירופה. היזם ובעל השליטה בענקית התקשורת ILIAD-FREE , אשר חוללה מהפכת מחירים ושירותים ששינתה את פני המפה בשוק התקשורת בצרפת. ניאל, המכונה באירופה "מנתץ המונופולים", בנה את ILIAD-FREE כחברה המספקת למיליוני צרפתים חבילת שימוש הוגן ללא הגבלה בשירותי אינטרנט מהיר, טלפון קווי ובינלאומי ומאות ערוצי וידיאו תמורת סכום קבוע של 30 אירו לחודש.
-                    <br><br>
-                    מחיר החבילה, שגרם לזעזוע ולמהפכה בשוק התקשורת בצרפת, לא השתנה מאז הקמת החברה, לפני למעלה מ10 שנים. בימים אלה מקימה ILIAD-FREE את הרשת הסלולרית החדשה בצרפת, שתפעל אף היא תחת המותג  FREE. קסביה ניאל הינו גם הבעלים של "לה מונד", קבוצת העיתונות החשובה בצרפת.
-                </p>
-            </article>
-            <article class="entrepreneurs">
-                <h5>ערן אברהם
-                    <span> || </span>
-                    <span>דירקטור, שותף ומנכ"ל</span>
-                </h5>
-                <p>
-                    עולה חדש מצרפת. בעל ניסיון ניהולי ופיננסי  עשיר בתחום התקשורת בחו"ל ובישראל . כיהן בתפקיד מנכ"ל של חברת הטלקום הצרפתית ILIAD . תחת המותג FREE   הקימה החברה רשת תקשורת לשירותי אינטרנט מהיר, טלפוניה נייחת ובינלאומית ומאות ערוצי טלוויזיה. האסטרטגיה השיווקית של FREE גרמה לרעידת אדמה בשוק התקשורת הצרפתי לרווחת מליוני לקוחות החברה ומתחרותיה. בזכות הישגיה של ILIAD בניהולו, זכה מיכאל בפרס היוקרתי 2005 BFM , כמנהל הצעיר הטוב ביותר בצרפת. בישראל, עסק ברכישת חברת התקשורת הוט ובהבראתה.
-                </p>
-            </article>
-            <article class="entrepreneurs">
-                <h5> אסתי זוהר
-                    <span> || </span>
-                    <span>שותפה</span>
-                </h5>
-                <p><b>
-                        מייסדים ובעלים של חברת האופנה NAF NAF מהמותגים המובילים בתחום ההלבשה באירופה.
-                        NAF NAF חוללה מהפכה בענף האופנה בעולם תוך שהיא מביאה את אופנת העלית לציבור הרחב</b>
-                </p>
-            </article>
+            <section id="entrep-area"></section>
         </section>
         <button class="nav-list-mobile"><p></p><a href="#what-we-do-mobile">מה אנחנו עושים?</a></button>
         <section id="what-we-do-mobile">
@@ -258,66 +263,23 @@
                 <div class="clear"></div>
                 <h4>משרות פנויות אצלנו</h4>
             </article>
+            <?php
+            $data = selectQuery($connection, $query1);
 
-            <article>
-                <span class="job-num">3</span>
-                <span class="job-property">תחום | </span><span class="job-val">מערכות מידע</span>
-                <span class="job-property">התפקיד | </span><span class="job-val">תכניתן PHP</span><br>
-                <span class="job-desc">דרישות | </span>
-                <p class="job-desc-val">ניסיון בתכנות PHP (לא WordPress / Joomla וכו'.אלא תכנות בפועל)
-                    <br>                        ניסיון בפיתוח Object Oriented
-                    <br>                        ידע ב- MySQL
-                    <br>                        ידע ב- JavaScript / HTML /5 / CSS /3
-                    <br>                        תואר ראשון בתחום רלוונטי
-                    <br>                        ידע ב- NoSQL - יתרון
-                </p>
+            if(isset($data)) {
+                getCareers($data);
+            }
+            ?>
+            <article class="job">
                 <span class="red-line"></span>
             </article>
-            <article>
-                <span class="job-num">1</span>
-                <span class="job-property">תחום | </span><span class="job-val">הנדסה</span>
-                <span class="job-property">התפקיד | </span><span class="job-val">מהנדס Core Network</span>
-                <br>
-                <span class="job-desc">תיאור | </span>
-                <p class="job-desc-val"> >>  הובלת תכנון והקמה של ליבת הרשת הסלולרית: מרכיבי סלולר, IP, שירותים מתקדמים, תשתיות
-                    פיסיות, קישוריות <br>
-                    >>  שותף בתהליכי בחירת פתרונות וספקים<br>
-                    >>  ביצוע תכנון ארוך טווח של מרכיבי הרשת השונים, תכנון קיבול, שרידות וטיב שירות<br>
-                    >>  שילוב יכולות טכנולוגיות חדשות תוך קשר אינטנסיבי עם ספקי המערכת
-                </p>
-                <br>
-                <span class="job-desc">דרישות | </span>
-                <p class="job-desc-val">
-                    >>  5-3 שנות ניסיון ברשתות טלפוניה וסלולר מתקדמות <br>
-                    >>  5-3 שנות ניסיון ברשתות IP <br>
-                    >>  הכרות מעמיקה עם מרכיבי הרשת של לפחות אחד הספקים המובילים בתחום הטלפוניה הסלולרית <br>
-                    >>  עבודת צוות מעולה ויכולת השתלבות מצוינת בצוות הקמה מצומצם <br>
-                    >>  נכונות לפעילות הקמה אינטנסיבית ומאתגרת
-                </p>
-            </article>
-            <article>
-                <span class="job-num">2</span>
-                <span class="job-property">תחום |</span><span class="job-val">הנדסה</span>
-                <span class="job-property">התפקיד |</span><span class="job-val">מהנדס תכנון רדיו</span>
-                <br>
-                <span class="job-desc">תיאור |</span>
-                <p class="job-desc-val">
-                    >>  ביצוע תכנון רדיו עבור תהליך הרכשת תחנות בסיס ותכנון רשתי ארוך טווח <br>
-                    >>  אחריות לביצועי מערכת <br>
-                    >>  קבלת החלטות יומיומית בהגדרת אזורי חיפוש והקמת תחנות בסיס, <br>
-                    תמיכה אינטנסיבית בתהליך פרישת תחנות בסיס<br>
-                    >>  הפעלת תכונות רשת רדיו, פיתוח כלים והפעלתם, שליטה מקצועית מלאה ביכולות מערכת הרדיו<br>
-                    >>  ניתוח שוטף של ביצועי רשת
-                </p>
-                <br>
-                <span class="job-desc">דרישות |</span>
-                <p class="job-desc-val">
-                    >>  5-3 שנות ניסיון כמהנדס תכנון רדיו בטכנולוגיות UMTS או CDMA <br>
-                    >>  הכרות מעמיקה עם מרכיבי מערכת סלולרית רלבנטיים, הפעלת תכונות רדיו וניתוח ביצועים <br>
-                    >>  עבודת צוות מעולה ויכולת השתלבות מצוינת בצוות הקמה מצומצם<br>
-                    >>  נכונות לעבודת שטח אינטנסיבית ומאתגרת
-                </p>
-            </article>
+            <?php
+            $data = selectQuery($connection, $query2);
+
+            if(isset($data)) {
+                getCareers($data);
+            }
+            ?>
         </section>
         <button class="nav-list-mobile"><p></p><a href="#contact-us-mobile">צור קשר</a></button>
         <section id="contact-us-mobile">
@@ -449,89 +411,22 @@
                 <h4>משרות פנויות אצלנו</h4>
             </article>
             <?php
-            $count = 0;
-            //use return data (if any)
-            while($row = mysqli_fetch_assoc($result)) {
-                //results are in associative array. keys are cols names
-                //output data from each row
-                $count++;
-                echo "<article class=\"job\">";
-                echo "<span>" . $count . "</span>";
-                echo "<span>" . "תחום | " . "</span>" . "<span>" . $row["category"] . "</span>";
-                echo "<span>" . "התפקיד | " . "</span>" . "<span>" . $row["title"] . "</span>";
-                echo "<br>";
-                if ($row["responsibilities"] != null) {
-                    echo "<span class=\"job-desc\">תיאור | </span>";
-                    echo "<p class=\"job-desc-val\">" . $row["responsibilities"] . "</p><br>";
-                }
-                echo "<span class=\"job-desc\">דרישות | </span>";
-                echo "<p class=\"job-desc-val\">" . $row["qualifications"] . "</p>";
-                echo "</article>";
+            $data = selectQuery($connection, $query1);
+
+            if(isset($data)) {
+                getCareers($data);
             }
             ?>
-            <?php
-            //release returned data
-            mysqli_free_result($result);
-            ?>
-            <article>
-                <span class="job-num">3</span>
-                <span class="job-property">תחום | </span><span class="job-val">מערכות מידע</span>
-                <span class="job-property">התפקיד | </span><span class="job-val">תכניתן PHP</span><br>
-                <span class="job-desc">דרישות | </span>
-                <p class="job-desc-val">ניסיון בתכנות PHP (לא WordPress / Joomla וכו'.אלא תכנות בפועל)
-                    <br>                        ניסיון בפיתוח Object Oriented
-                    <br>                        ידע ב- MySQL
-                    <br>                        ידע ב- JavaScript / HTML /5 / CSS /3
-                    <br>                        תואר ראשון בתחום רלוונטי
-                    <br>                        ידע ב- NoSQL - יתרון
-                </p>
+            <article class="job">
                 <span class="red-line"></span>
             </article>
-            <article>
-                <span class="job-num">1</span>
-                <span class="job-property">תחום | </span><span class="job-val">הנדסה</span>
-                <span class="job-property">התפקיד | </span><span class="job-val">מהנדס Core Network</span>
-                <br>
-                <span class="job-desc">תיאור | </span>
-                <p class="job-desc-val"> >>  הובלת תכנון והקמה של ליבת הרשת הסלולרית: מרכיבי סלולר, IP, שירותים מתקדמים, תשתיות
-                    פיסיות, קישוריות <br>
-                    >>  שותף בתהליכי בחירת פתרונות וספקים<br>
-                    >>  ביצוע תכנון ארוך טווח של מרכיבי הרשת השונים, תכנון קיבול, שרידות וטיב שירות<br>
-                    >>  שילוב יכולות טכנולוגיות חדשות תוך קשר אינטנסיבי עם ספקי המערכת
-                </p>
-                <br>
-                <span class="job-desc">דרישות | </span>
-                <p class="job-desc-val">
-                    >>  5-3 שנות ניסיון ברשתות טלפוניה וסלולר מתקדמות <br>
-                    >>  5-3 שנות ניסיון ברשתות IP <br>
-                    >>  הכרות מעמיקה עם מרכיבי הרשת של לפחות אחד הספקים המובילים בתחום הטלפוניה הסלולרית <br>
-                    >>  עבודת צוות מעולה ויכולת השתלבות מצוינת בצוות הקמה מצומצם <br>
-                    >>  נכונות לפעילות הקמה אינטנסיבית ומאתגרת
-                </p>
-            </article>
-            <article>
-                <span class="job-num">2</span>
-                <span class="job-property">תחום |</span><span class="job-val">הנדסה</span>
-                <span class="job-property">התפקיד |</span><span class="job-val">מהנדס תכנון רדיו</span>
-                <br>
-                <span class="job-desc">תיאור |</span>
-                <p class="job-desc-val">
-                    >>  ביצוע תכנון רדיו עבור תהליך הרכשת תחנות בסיס ותכנון רשתי ארוך טווח <br>
-                    >>  אחריות לביצועי מערכת <br>
-                    >>  קבלת החלטות יומיומית בהגדרת אזורי חיפוש והקמת תחנות בסיס, <br>
-                    תמיכה אינטנסיבית בתהליך פרישת תחנות בסיס<br>
-                    >>  הפעלת תכונות רשת רדיו, פיתוח כלים והפעלתם, שליטה מקצועית מלאה ביכולות מערכת הרדיו<br>
-                    >>  ניתוח שוטף של ביצועי רשת
-                </p>
-                <br>
-                <span class="job-desc">דרישות |</span>
-                <p class="job-desc-val">
-                    >>  5-3 שנות ניסיון כמהנדס תכנון רדיו בטכנולוגיות UMTS או CDMA <br>
-                    >>  הכרות מעמיקה עם מרכיבי מערכת סלולרית רלבנטיים, הפעלת תכונות רדיו וניתוח ביצועים <br>
-                    >>  עבודת צוות מעולה ויכולת השתלבות מצוינת בצוות הקמה מצומצם<br>
-                    >>  נכונות לעבודת שטח אינטנסיבית ומאתגרת
-                </p>
-            </article>
+            <?php
+            $data = selectQuery($connection, $query2);
+
+            if(isset($data)) {
+                getCareers($data);
+            }
+            ?>
         </section>
         <span class="boundary-line"></span>
         <section id="contact-us">
