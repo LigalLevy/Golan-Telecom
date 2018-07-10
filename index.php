@@ -1,6 +1,6 @@
 <?php
     //create a mySQL DB connection:
-    $dbhost = "182.50.133.51";
+    /*$dbhost = "182.50.133.51";
     $dbuser = "studDB18A";
     $dbpass = "stud18aDB1!";
     $dbname = "studDB18A";
@@ -11,20 +11,25 @@
     if(mysqli_connect_errno()) {
         die("DB connection failed: " . mysqli_connect_error() . " (" . mysqli_connect_errno() . ")"
         );
-    }
+    }*/
+
+
+    include('db.php');
+
+    $connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 
     //get data from DB
-    $query1 = "SELECT * FROM tb_careers1_230 WHERE category='מערכות מידע'";
-    $query2 = "SELECT * FROM tb_careers1_230 WHERE category='הנדסה'";
+    $query1 = "SELECT * FROM tb_careers1_230 WHERE category='מערכות מידע' AND lang='heb'";
+    $query2 = "SELECT * FROM tb_careers1_230 WHERE category='הנדסה' AND lang='heb'";
 
-    function selectQuery ($connection , $query) {
+    /*function selectQuery ($connection , $query) {
         $result = mysqli_query($connection, $query);
         if(!$result) {
             die("DB query failed.");
         }
 
         return $result;
-    }
+    }*/
 
     function getCareers($result) {
         $count = 0;
@@ -68,7 +73,7 @@
 <div class="wrapper">
     <header>
         <a class="logo" href="#"></a>
-        <a class="lang" href="en-index.html"><b>English</b></a>
+        <a class="lang" href="en-index.php"><b>English</b></a>
     </header>
     <section id="golan-telecom-top">
         <h1>גולן טלקום, השחקן החדש בעולם הסלולר</h1>
@@ -205,7 +210,7 @@
                 <div class="clear"></div>
                 <h4>היזמים</h4>
             </article>
-            <section id="entrep-area"></section>
+            <section id="entrep-mobile"></section>
         </section>
         <button class="nav-list-mobile"><p></p><a href="#what-we-do-mobile">מה אנחנו עושים?</a></button>
         <section id="what-we-do-mobile">

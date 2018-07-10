@@ -731,6 +731,11 @@ ul {
         margin-left: 20px;
     }
 
+    #en-version .job span:first-child {
+        margin-right: 20px;
+        margin-left: 0;
+    }
+
     .job span:nth-child(2), .job span:nth-child(4) {
         position: relative;
         bottom: 18px;
@@ -744,6 +749,15 @@ ul {
 
     .job-desc , .job-desc-val{
         margin-right: 45px;
+    }
+
+    #en-version .job-desc ,#en-version .job-desc-val{
+        margin-left: 45px;
+    }
+
+    #en-version .job span:nth-child(3),#en-version .job span:nth-child(5){
+        margin-left: 0px;
+        margin-right: 20px;
     }
 
     .job-desc {

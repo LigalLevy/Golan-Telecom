@@ -113,6 +113,7 @@ function fetchJson(fileName){
             sHTML += "</article>";
         });
 
+        $('#entrep-mobile').append(sHTML);
         $('#entrep-area').append(sHTML);
     });
 }
