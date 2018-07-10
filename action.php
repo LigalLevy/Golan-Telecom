@@ -1,6 +1,6 @@
 <?php
 
-    include('index.php');
+    include('db.php');
 
     $connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 
