@@ -926,16 +926,27 @@ ul {
     }
 
     .logo {
+        display: block;
         background-size: 80% auto;
         background-repeat: no-repeat;
         background-position: center center;
         margin: 16px auto 10px;
     }
 
+    .lang {
+        display: inline-block;
+        position: relative;
+        bottom: 109px;
+        right: 140px;
+        background-color: #d9d9d9;
+        padding: 4.5px 2.5px;
+        border-radius: 15%;
+    }
+
     #golan-telecom-top article p:first-child,
     #golan-telecom-top article span:nth-child(2),
     #golan-telecom-top h3, #golan-telecom-top h1,
-    aside, .lang{
+    aside {
         display: none;
     }
 
@@ -1076,8 +1087,6 @@ ul {
         display: block;
         margin-top: 7%;
     }
-
-
 
     #nav-mobile section {
         width: 94%;
