@@ -8,7 +8,7 @@
     $query1 = "SELECT * FROM tb_careers1_230 WHERE category='מערכות מידע' AND lang='heb'";
     $query2 = "SELECT * FROM tb_careers1_230 WHERE category='הנדסה' AND lang='heb'";
     $queryNews = "SELECT header,id FROM `tb_news_230` WHERE lang='heb' ORDER BY id";
-    $queryArticle = "SELECT * FROM 'tb_news_230' WHERE id=" . $id;
+    //$queryArticle = "SELECT * FROM 'tb_news_230' WHERE id=" . $id;
 
     function getCareers($result) {
         $count = 0;
@@ -296,49 +296,46 @@
             <span class="side-line"></span>
             <span class="title-icon"></span>
             <section>
-                <form>
-                    <label>אני</label>
-                    <input type="text" placeholder="שם/חברה">
-                    <input type="text" placeholder="חברה">
-
-                    <label>ניתן להשיג אותי:</label>
-                    <input type="email" placeholder="E-Mail">
-                    <input type="tel" placeholder="נייד">
-
-                    <span>היום אני מנוי של:</span>
-                    <input type="radio" name="" value="spain">
-                    <label >סלקום</label>
-                    <input type="radio" name="" value="ashkenaz">
-                    <label>פלאפון</label>
-                    <input type="radio" name="interests[]" value="else">
-                    <label>אורנג'</label>
-                    <input type="radio" name="interests[]" value="else">
-                    <label>מירס</label>
-
-                    <br>
-
-                    <span>אני לקוח:</span>
-                    <input type="radio" name="gender" value="female">
-                    <label>מרוצה</label>
-                    <input type="radio" name="gender" value="male">
-                    <label>לא מרוצה</label>
-
-                    <label>החשבון האחרון שלי:</label>
-                    <input type="number" placeholder="רשום סכום">
-                    <br>
-
-                    <span>מעוניין ש:</span>
-                    <label>[סמן כל מה שמתאים לך]</label>
-                    <input type="checkbox" name="interests[]" value="spain">
-                    <label >להיות בין ראשוני הלקוחות</label>
-                    <input type="checkbox" name="interests[]" value="ashkenaz">
-                    <label>להתנסות בשירותכם החדשים לכשיופעלו</label>
-                    <input type="checkbox" name="interests[]" value="else">
-                    <label>צרו עימי קשר</label>
-
+                <form  action="action-mobile.php" method="post" autocomplete="on">
+                    <section>
+                        <input type="text" name="username" required placeholder="שם/חברה">
+                        <input type="text" name="company" placeholder="חברה">
+                    </section>
+                    <section>
+                        <input type="email" name="email" required placeholder="E-Mail">
+                        <input type="tel" name="phone" required placeholder="נייד">
+                    </section>
+                    <section>
+                        <span>היום אני מנוי של:</span><br>
+                        <label><input type="checkbox" name="subscription[]" value="cellcom"> סלקום</label>
+                        <label><input type="checkbox" name="subscription[]" value="pelephone" placeholder=" ">  פלאפון</label>
+                        <label><input type="checkbox" name="subscription[]" value="orange"> אורנג' </label>
+                        <label><input type="checkbox" name="subscription[]" value="mirs"> מירס</label>
+                    </section>
+                    <section>
+                        <span>לקוח מרוצה?</span>
+                        <label class="switch">
+                            <input type="checkbox" name="satisfaction">
+                            <span class="slider round"></span>
+                        </label>
+                    </section>
+                    <section>
+                        <span>החשבון האחרון שלי:</span>
+                        <input type="text" id="bill" name="bill" required placeholder="רשום סכום">
+                    </section>
+                    <section>
+                        <span>מעוניין ש:</span>
+                        <br>
+                        <input type="checkbox" name="interests[]" value="first-customer">
+                        <label class="check">להיות בין ראשוני הלקוחות</label>
+                        <br>
+                        <input type="checkbox" name="interests[]" value="try-services">
+                        <label class="check">להתנסות בשירותכם החדשים לכשיופעלו</label>
+                        <br>
+                        <input type="checkbox" name="interests[]" value="contact-me">
+                        <label class="check">צרו עימי קשר</label>
+                    </section>
                     <input type="submit" value="שלח">
-                    <p>* לתשומת לבך אנו מתנצלים על משך זמן המענה עקב ריבוי הפניות</p>
-
                 </form>
             </section>
         </section>

@@ -2,6 +2,15 @@
 
     include('db.php');
 
+    /*$html = file_get_contents("index.php");
+    $doc = new DOMDocument(); // create DOMDocument
+    libxml_use_internal_errors(true);
+    $doc->loadHTML($html);*/
+    /* if($html) {
+      // Get the checkbox
+      $checkBox = $doc->getElementById("satisfaction");
+    }*/
+
     $connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 
     //testing connection success
@@ -10,7 +19,7 @@
         );
     }
 
-    if(isset($_POST['username'], $_POST['email'], $_POST['phone'], $_POST['subscription'], $_POST['satisfaction'], $_POST['bill'])) {
+    if(isset($_POST['username'], $_POST['email'], $_POST['phone'], $_POST['subscription'], $_POST['bill'])) {
         //escape variables for security
         $user = mysqli_real_escape_string($connection, $_POST['username']);
         $company = mysqli_real_escape_string($connection, $_POST['company']);
@@ -28,3 +37,5 @@
     }
 
     mysqli_close($connection);
+
+    header('Location: index.php');

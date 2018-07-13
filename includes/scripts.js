@@ -11,7 +11,7 @@ $(function() {
 /*NAV SELECTED FUNCTION
 * remarks the selected AREA with class .selected-nav */
 $(function() {
-    $('#nav-list li').click(function() {
+    $('#nav-list li').onclick(function() {
         $('#nav-list li').removeClass('selected-nav');
         $('#nav-list p').removeAttr('id','p-hover');
         $(this).addClass('selected-nav');

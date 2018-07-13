@@ -7,7 +7,7 @@
     //get data from DB
     $query1 = "SELECT * FROM tb_careers1_230 WHERE category='Information Systems' AND lang='eng'";
     $query2 = "SELECT * FROM tb_careers1_230 WHERE category='Engineering' AND lang='eng'";
-    //$queryNews = "SELECT header,id FROM `tb_news_230` WHERE lang='heb' ORDER BY id";
+    $queryNews = "SELECT header,id FROM `tb_news_230` WHERE lang='heb' ORDER BY id";
 
     function getCareers($result) {
         $count = 0;
@@ -281,105 +281,72 @@
                 <div class="clear"></div>
                 <h4>our open positions</h4>
             </article>
-            <article>
-                <span class="job-num">1</span>
-                <span class="job-property">Job category |</span><span class="job-val">Information Systems</span>
-                <span class="job-property">Job title |</span><span class="job-val">Billing supervisor</span>
-                <br>
-                <span class="job-desc">Responsibilities |</span>
-                <p class="job-desc-val">
-                    Management of the system supplier, project management, implementation of the system, testing, ongoing operation of the system (entering price lists, checking invoices), implementation of new services and marketing proposals in the system. The billing supervisor should be familiar with the matter
-                    Deepens the capabilities of the systems.
-                </p>
-                <br>
-                <span class="job-desc">Qualifications |</span>
-                <p class="job-desc-val">
-                    Needs fluent French, has a technological approach, has good communication skills and teamwork, assertive, high learning abilities,
-                    energetic and willing to work hard and challenging. Flexible hours may be needed during stress events.
-                </p>
-            </article>
-            <article>
-                <span class="job-num">2</span>
-                <span class="job-property">Job category |</span><span class="job-val">Information Systems</span>
-                <span class="job-property">Job title |</span><span class="job-val">IT infrastructure engineer</span><br>
-                <span class="job-desc">Responsibilities |</span>
-                <p class="job-desc-val">
-                    Responsibilities for server rooms (external), communications, operating systems, survivability management, information security,
-                    management of workspaces, responsibility for employee end equipment, technical support.</p>
-                <br>
-                <span class="job-desc">Qualifications |</span>
-                <p class="job-desc-val">
-                    5-2 years of experience in the field of IT infrastructure, independent, self-learning, high motivation and willingness to work hard and challenging, services and excellent staff.
-                </p>
-            </article>
-            <article>
-                <span class="job-num">3</span>
-                <span class="job-property">Job category |</span><span class="job-val">Information Systems</span>
-                <span class="job-property">Job title |</span><span class="job-val">PHP Developer</span><br>
-                <span class="job-desc">Qualifications |</span>
-                <p class="job-desc-val">
-                    Experience in PHP programming (not WordPress / Joomla etc.) but actual programming).
-                    <br>Experience in Object Oriented Development
-                    <br>MySQL knowledge
-                    <br>Knowledge in JavaScript / HTML / 5 / CSS / 3
-                    <br>BA in relevant field
-                    <br>Knowledge in NoSQL - an advantage
-                </p>
+            <?php
+            $data = selectQuery($connection, $query1);
+
+            if(isset($data)) {
+                getCareers($data);
+            }
+            ?>
+            <article class="job">
                 <span class="red-line"></span>
             </article>
-            <article>
-                <span class="job-num">1</span>
-                <span class="job-property">Job category |</span><span class="job-val">Engineering</span>
-                <span class="job-property">Job title |</span><span class="job-val">Core Network engineer</span>
-                <br>
-                <span class="job-desc">Responsibilities |</span>
-                <p class="job-desc-val">
-                    >> Leading the design and construction of the core of the cellular network: cellular components, IP, advanced services, physical infrastructures, connectivity <br>
-                    >> Partner in the process of choosing solutions and suppliers <br>
-                    >> Implementation of long-term planning of various network components, capacitance planning, survivability and quality of service <br>
-                    >> Integrating new technology capabilities into intensive contact with system vendors
-                </p>
-                <br>
-                <span class="job-desc">Qualifications |</span>
-                <p class="job-desc-val">
-                    >> 3-5 years of experience in advanced telephony and cellular networks <br>
-                    >> 3-5 years of experience in IP networks <br>
-                    >> Familiarity with the network components of at least one of the leading providers in the field of cellular telephony <br>
-                    >> Excellent teamwork and excellent integration skills in a small construction team <br>
-                    >> Willingness to establish intensive and challenging activities
-                </p>
-            </article>
-            <article>
-                <span class="job-num">2</span>
-                <span class="job-property">Job category |</span><span class="job-val">Engineering</span>
-                <span class="job-property">Job title |</span><span class="job-val">Radio design engineer</span>
-                <br>
-                <span class="job-desc">Responsibilities |</span>
-                <p class="job-desc-val">
-                    >> Perform radio planning for the process of purchasing base stations and long-term network planning <br>
-                    >> Responsibility for system performance <br>
-                    >> Making daily decisions in defining search areas and setting up base stations,
-                    Intensive support for the BS base station deployment process
-                    >> Radio network features, tools development and operation, full professional control of the capabilities of the radio system <br>
-                    >> Ongoing analysis of network performance
-                </p>
-                <br>
-                <span class="job-desc">Qualifications |</span>
-                <p class="job-desc-val">
-                    >> 3-5 years of experience as a radio design engineer using UMTS or CDMA technology <br>
-                    >> Familiarity with relevant cellular system components, radio feature activation and performance analysis <br>
-                    >> Excellent team work and excellent integration skills in a small construction team <br>
-                    >> Willingness to work intensively and competitively
-                </p>
-            </article>
+            <?php
+            $data = selectQuery($connection, $query2);
+
+            if(isset($data)) {
+                getCareers($data);
+            }
+            ?>
         </section>
         <button class="nav-list-mobile"><p></p><a href="#contact-us-mobile">Contact Us</a></button>
         <section id="contact-us-mobile">
             <span class="line"><h3>Wanna take part in the revolution?</h3></span>
             <span class="side-line"></span>
             <span class="title-icon"></span>
-            <form>
-            </form>
+            <section>
+                <form  action="action-mobile.php" method="post" autocomplete="on">
+                    <section>
+                        <input type="text" name="username" placeholder="Name/Company">
+                        <input type="text" name="company" placeholder="Company">
+                    </section>
+                    <section>
+                        <input type="email" name="email" placeholder="E-Mail">
+                        <input type="tel" name="phone" placeholder="Phone">
+                    </section>
+                    <section>
+                        <span>Today I'm subscribed to:</span><br>
+                        <label><input type="checkbox" name="subscription[]" value="cellcom"> Cellcom</label>
+                        <label><input type="checkbox" name="subscription[]" value="pelephone" placeholder=" "> Pelephone</label>
+                        <label><input type="checkbox" name="subscription[]" value="orange"> Orange </label>
+                        <label><input type="checkbox" name="subscription[]" value="mirs"> Mirs </label>
+                    </section>
+                    <section>
+                        <span>Satisfied customer?</span>
+                        <label class="switch">
+                            <input type="checkbox" name="satisfaction">
+                            <span class="slider round"></span>
+                        </label>
+                    </section>
+                    <section>
+                        <span>My last bill:</span>
+                        <input type="text" id="bill" name="bill" placeholder="Write bills:">
+                    </section>
+                    <section>
+                        <span>Interested in:</span>
+                        <br>
+                        <input type="checkbox" name="interests[]" value="first-customer">
+                        <label>Be among the first customers</label>
+                        <br>
+                        <input type="checkbox" name="interests[]" value="try-services">
+                        <label>Experiment with the new service</label>
+                        <br>
+                        <input type="checkbox" name="interests[]" value="contact-me">
+                        <label>Contact me</label>
+                    </section>
+                    <input type="submit" value="Submit">
+                </form>
+            </section>
         </section>
     </nav>
     <!-- /END OF NAV AND MAIN VERSION FOR MOBILE-->
@@ -470,50 +437,6 @@
                 getCareers($data);
             }
             ?>
-        <!--    <article>
-                <span class="job-num">1</span>
-                <span class="job-property">Job category |</span><span class="job-val">Information Systems</span>
-                <span class="job-property">Job title |</span><span class="job-val">Billing supervisor</span>
-                <br>
-                <span class="job-desc">Responsibilities |</span>
-                <p class="job-desc-val">
-                    Management of the system supplier, project management, implementation of the system, testing, ongoing operation of the system (entering price lists, checking invoices), implementation of new services and marketing proposals in the system. The billing supervisor should be familiar with the matter
-                    Deepens the capabilities of the systems.
-                </p>
-                <br>
-                <span class="job-desc">Qualifications |</span>
-                <p class="job-desc-val">
-                    Needs fluent French, has a technological approach, has good communication skills and teamwork, assertive, high learning abilities,
-                    energetic and willing to work hard and challenging. Flexible hours may be needed during stress events.
-                </p>
-            </article>-->
-          <!--  <article>
-                <span class="job-num">2</span>
-                <span class="job-property">Job category |</span><span class="job-val">Information Systems</span>
-                <span class="job-property">Job title |</span><span class="job-val">IT infrastructure engineer</span><br>
-                <span class="job-desc">Responsibilities |</span>
-                <p class="job-desc-val">
-                    Responsibilities for server rooms (external), communications, operating systems, survivability management, information security,
-                    management of workspaces, responsibility for employee end equipment, technical support.</p>
-                <br>
-                <span class="job-desc">Qualifications |</span>
-                <p class="job-desc-val">
-                    5-2 years of experience in the field of IT infrastructure, independent, self-learning, high motivation and willingness to work hard and challenging, services and excellent staff.
-                </p>
-            </article>-->
-            <!--<article>
-                <span class="job-num">3</span>
-                <span class="job-property">Job category |</span><span class="job-val">Information Systems</span>
-                <span class="job-property">Job title |</span><span class="job-val">PHP Developer</span><br>
-                <span class="job-desc">Qualifications |</span>
-                <p class="job-desc-val">
-                    Experience in PHP programming (not WordPress / Joomla etc.) but actual programming).
-                    <br>Experience in Object Oriented Development
-                    <br>MySQL knowledge
-                    <br>Knowledge in JavaScript / HTML / 5 / CSS / 3
-                    <br>BA in relevant field
-                    <br>Knowledge in NoSQL - an advantage
-                </p>-->
             <article class="job">
                 <span class="red-line"></span>
             </article>
@@ -524,51 +447,6 @@
                 getCareers($data);
             }
             ?>
-          <!--  <article>
-                <span class="job-num">1</span>
-                <span class="job-property">Job category |</span><span class="job-val">Engineering</span>
-                <span class="job-property">Job title |</span><span class="job-val">Core Network Engineer</span>
-                <br>
-                <span class="job-desc">Responsibilities |</span>
-                <p class="job-desc-val">
-                    >> Leading the design and construction of the core of the cellular network: cellular components, IP, advanced services, physical infrastructures, connectivity <br>
-                    >> Partner in the process of choosing solutions and suppliers <br>
-                    >> Implementation of long-term planning of various network components, capacitance planning, survivability and quality of service <br>
-                    >> Integrating new technology capabilities into intensive contact with system vendors
-                </p>
-                <br>
-                <span class="job-desc">Qualifications |</span>
-                <p class="job-desc-val">
-                    >> 3-5 years of experience in advanced telephony and cellular networks <br>
-                    >> 3-5 years of experience in IP networks <br>
-                    >> Familiarity with the network components of at least one of the leading providers in the field of cellular telephony <br>
-                    >> Excellent teamwork and excellent integration skills in a small construction team <br>
-                    >> Willingness to establish intensive and challenging activities
-                </p>
-            </article>-->
-          <!--  <article>
-                <span class="job-num">2</span>
-                <span class="job-property">Job category |</span><span class="job-val">Engineering</span>
-                <span class="job-property">Job title |</span><span class="job-val">Radio design Engineer</span>
-                <br>
-                <span class="job-desc">Responsibilities |</span>
-                <p class="job-desc-val">
-                    >> Perform radio planning for the process of purchasing base stations and long-term network planning <br>
-                    >> Responsibility for system performance <br>
-                    >> Making daily decisions in defining search areas and setting up base stations,
-                    Intensive support for the BS base station deployment process
-                    >> Radio network features, tools development and operation, full professional control of the capabilities of the radio system <br>
-                    >> Ongoing analysis of network performance
-                </p>
-                <br>
-                <span class="job-desc">Qualifications |</span>
-                <p class="job-desc-val">
-                    >> 3-5 years of experience as a radio design engineer using UMTS or CDMA technology <br>
-                    >> Familiarity with relevant cellular system components, radio feature activation and performance analysis <br>
-                    >> Excellent team work and excellent integration skills in a small construction team <br>
-                    >> Willingness to work intensively and competitively
-                </p>
-            </article>-->
         </section>
         <span class="boundary-line"></span>
         <section id="contact-us">
