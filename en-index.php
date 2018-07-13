@@ -7,6 +7,7 @@
     //get data from DB
     $query1 = "SELECT * FROM tb_careers1_230 WHERE category='Information Systems' AND lang='eng'";
     $query2 = "SELECT * FROM tb_careers1_230 WHERE category='Engineering' AND lang='eng'";
+    //$queryNews = "SELECT header,id FROM `tb_news_230` WHERE lang='heb' ORDER BY id";
 
     function getCareers($result) {
         $count = 0;
@@ -18,17 +19,36 @@
             $count++;
             echo "<article class=\"job\">";
             echo "<span>" . $count . "</span>";
-            echo "<span>" . "Job category |" . "</span>" . "<span>" . $row["category"] . "</span>";
-            echo "<span>" . "Job title |" . "</span>" . "<span>" . $row["title"] . "</span>";
+            echo "<span>" . "Job category | " . "</span>" . "<span>" . $row["category"] . "</span>";
+            echo "<span>" . "Job title | " . "</span>" . "<span>" . $row["title"] . "</span>";
             echo "<br>";
             if ($row["responsibilities"] != null) {
-                echo "<span class=\"job-desc\">Responsibilities |</span>";
+                echo "<span class=\"job-desc\">Responsibilities | </span>";
                 echo "<p class=\"job-desc-val\">" . $row["responsibilities"] . "</p><br>";
             }
-            echo "<span class=\"job-desc\">Qualifications |</span>";
+            echo "<span class=\"job-desc\">Qualifications | </span>";
             echo "<p class=\"job-desc-val\">" . $row["qualifications"] . "</p>";
             echo "</article>";
         }
+
+        //release returned data
+        mysqli_free_result($result);
+    }
+
+    function getNewsList ($result) {
+        echo "<ul id=\"articles\">";
+
+        //use return data (if any)
+        while ($row = mysqli_fetch_assoc($result)) {
+            //results are in associative array. keys are cols names
+            //output data from each row
+            echo "<li>";
+            echo "<a href=\"" . $row["id"] . "\"" . " id=\"myBtn\">";
+            echo $row["header"];
+            echo "</a></li>";
+        }
+
+        echo "</ul>";
 
         //release returned data
         mysqli_free_result($result);
@@ -81,16 +101,25 @@
         <h5>Updates and RSS</h5>
         <span></span>
         <h5>From the newspaper</h5>
+        <?php
+        $data = selectQuery($connection, $queryNews);
+
+        if(isset($data)) {
+            getNewsList($data);
+        }
+        ?>
+        <!--
         <ul id="articles">
+        <a href='book.html?bookId=" + this.id + "
             <li><a href="#article01" id="myBtn">GT submitted a tender</a></li>
             <li><a href="#article02">Delivery of GT Guarantee</a></li>
             <li><a href="#article03">Internal roaming agreement</a></li>
             <li><a href="#article04">Golan Telecom's prefix</a></li>
-        </ul>
+        </ul>-->
         <span class="close"></span>
         <section id="myModal" class="modal">
             <article id="article01" class="modal-content">
-                <h4>The Golan Telecom Group, headed by entrepreneur and CEO Michael Golan, today submitted its bid in the cellular frequencies tender of the Ministry of Communications</h4><br>
+             <!--   <h4>The Golan Telecom Group, headed by entrepreneur and CEO Michael Golan, today submitted its bid in the cellular frequencies tender of the Ministry of Communications</h4><br>
                 <p>The Golan Telecom Group, headed by entrepreneur and CEO Michael Golan, today submitted its bid in the cellular frequencies tender of the Ministry of Communications, in which two new operators will be selected.<br>
                     9 The tender boxes of Golan Telecom were submitted to the Tender Committee of the Ministry of Communications in Jerusalem this afternoon by Oren Most, who heads the tender team, Adv. Nitzan Averbach of Zellermayer-Pelossof and Shai Duidor, of the engineering team.</p><br>
                 <h4>Michael Golan :</h4>
@@ -106,13 +135,13 @@
                     I am proud to be part of this rare group of entrepreneurs and managers, headed by Michael Golan and Xavier Nir, who have a fantastic record in the establishment and management of ILIAD.<br>
                     Under the FREE brand, ILIAD provides millions of French people with a generous and varied service package that has caused its competitors to reduce prices by 40% !!!,
                     In Israel, which was a global pioneer in the mobile personal communications revolution in the mid-1990s, the competition that once characterized the cellular market is lacking. The frequency tender will stimulate and generate competition for the welfare of consumers, the quality of life and the benefit of the economy as a whole.<br>
-                </p>
+                </p>-->
             </article>
             <article id="article02" class="modal-content">
-                <h4>Golan Telecom completes all its obligations in advance: <br> it has submitted the bank guarantee to the Ministry of Communications
+                <!--<h4>Golan Telecom completes all its obligations in advance: <br> it has submitted the bank guarantee to the Ministry of Communications
                     In the amount of NIS 360 million from Mizrahi Tefahot Bank
-                </h4>
-                <h6>The company has begun recruiting key personnel for the establishment of technology, engineering and information systems infrastructures
+                </h4>-->
+               <!-- <h6>The company has begun recruiting key personnel for the establishment of technology, engineering and information systems infrastructures
                     and invites candidates to send CVs to HR@golantelecom.co.il
                 </h6>
                 <br>
@@ -138,10 +167,10 @@
                     <b>Golan Telecom</b> has begun recruiting key employees in the fields of engineering, technology and information systems to meet the challenge of building Israel's next cellular network. Candidates are invited to send an e-mail to HR@golantelecom.co.il
                     <br>
                     Golan Communications thanks all those Israelis who have demonstrated their support in the past few weeks and we will meet them in the market in 2012.
-                </p>
+                </p>-->
             </article>
             <article id="article03" class="modal-content">
-                <h4>Golan Telecom, the new cellular operator, has signed the agreement
+      <!--          <h4>Golan Telecom, the new cellular operator, has signed the agreement
                     An internal roaming agreement with Cellcom
                 </h4>
                 <br><br>
@@ -155,8 +184,8 @@
                 </p>
                 <br><br>
                 <p><b>For additional information: Yinon Harel - Harel-Mordy Integrated marketing communications</b><br><b> 03-6090906 || 0522688111</b></p>
-            </article>
-            <article id="article04" class="modal-content">
+         -->   </article>
+            <article id="article04" class="modal-content"><!--
                 <h3>The competition has a prefix - 058:</h3>
                 <h4>The Ministry of Communications awarded a prefix to Golan Telecom customers - 058</h4>
                 <br><br>
@@ -169,7 +198,7 @@
                     During 2012, <b>Golan Telecom</b> will start the revolution for the benefit of the cellular consumer and for him.
                     <br><br>
                     Golan Telecom wishes to thank the Ministry of Communications for its speed and efficiency throughout all stages of its work, which helps us reach the starting line in 2012 and change the Israeli communications market for the Israeli consumer with a real revolution.
-                </p>
+                </p>-->
             </article>
         </section>
     </aside>

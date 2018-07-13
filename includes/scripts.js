@@ -42,7 +42,7 @@ for (i = 0; i < acc.length; i++) {
 $(function(){
     // Add smooth scrolling to all links
     $("a").on('click', function(event) {
-        if ((screen.width>=900)) {
+        if ((window.screen.availWidth >=900)) {
             // Make sure this.hash has a value before overriding default behavior
             if (this.hash !== "") {
                 // Prevent default anchor click behavior
@@ -97,7 +97,7 @@ window.onclick = function(event) {
 /* END OF MODAL */
 
 
-//extract data from JSON file
+//Extract data from JSON file
 var sHTML = "";
 function fetchJson(fileName){
     $.getJSON(fileName,function(data){
