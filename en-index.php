@@ -7,7 +7,8 @@
     //get data from DB
     $query1 = "SELECT * FROM tb_careers1_230 WHERE category='Information Systems' AND lang='eng'";
     $query2 = "SELECT * FROM tb_careers1_230 WHERE category='Engineering' AND lang='eng'";
-    $queryNews = "SELECT header,id FROM `tb_news_230` WHERE lang='heb' ORDER BY id";
+    $queryNews = "SELECT header,id FROM `tb_news_230` WHERE lang='eng' ORDER BY id";
+    $queryArticle = "SELECT * FROM `tb_news_230` WHERE lang='eng'";
 
     function getCareers($result) {
         $count = 0;
@@ -42,13 +43,34 @@
         while ($row = mysqli_fetch_assoc($result)) {
             //results are in associative array. keys are cols names
             //output data from each row
-            echo "<li>";
-            echo "<a href=\"" . $row["id"] . "\"" . " id=\"myBtn\">";
+            echo "<li id=\"" . $row["id"] . "\" >";
+            echo "<a href=\"#0" . $row["id"] ."\" >";
             echo $row["header"];
             echo "</a></li>";
         }
 
         echo "</ul>";
+
+        //release returned data
+        mysqli_free_result($result);
+    }
+
+    function getArticles ($result) {
+        //use return data (if any)
+        while ($row = mysqli_fetch_assoc($result)) {
+            //results are in associative array. keys are cols names
+            //output data from each row
+            echo "<article id=\"0" . $row["id"] . "\"". " >";
+            if(isset($row['extraTitle'])) {
+                echo "<h3>" . $row['extraTitle'] . "</h3>";
+            }
+            echo "<h4>" . $row["title"] . "</h4>";
+            echo $row["text"];
+            if(isset($row['boldFooter'])) {
+                echo $row['boldFooter'];
+            }
+            echo "</article>";
+        }
 
         //release returned data
         mysqli_free_result($result);
@@ -108,98 +130,15 @@
             getNewsList($data);
         }
         ?>
-        <!--
-        <ul id="articles">
-        <a href='book.html?bookId=" + this.id + "
-            <li><a href="#article01" id="myBtn">GT submitted a tender</a></li>
-            <li><a href="#article02">Delivery of GT Guarantee</a></li>
-            <li><a href="#article03">Internal roaming agreement</a></li>
-            <li><a href="#article04">Golan Telecom's prefix</a></li>
-        </ul>-->
         <span class="close"></span>
         <section id="myModal" class="modal">
-            <article id="article01" class="modal-content">
-             <!--   <h4>The Golan Telecom Group, headed by entrepreneur and CEO Michael Golan, today submitted its bid in the cellular frequencies tender of the Ministry of Communications</h4><br>
-                <p>The Golan Telecom Group, headed by entrepreneur and CEO Michael Golan, today submitted its bid in the cellular frequencies tender of the Ministry of Communications, in which two new operators will be selected.<br>
-                    9 The tender boxes of Golan Telecom were submitted to the Tender Committee of the Ministry of Communications in Jerusalem this afternoon by Oren Most, who heads the tender team, Adv. Nitzan Averbach of Zellermayer-Pelossof and Shai Duidor, of the engineering team.</p><br>
-                <h4>Michael Golan :</h4>
-                <p>"The Golan Telecom Group, my partners, Xavier Nir, the controlling shareholder of ILIAD, the Priant brothers and the tender team and the way, are very excited today by the unique status that enables us to compete in the tender for receiving a new cellular license in Israel.
-                    We thank the Ministry of Communications and its head for opening up the Israeli communications market to free competition and bringing the news and revolution that every media consumer so desires. "
-                    "We will do our utmost to leverage the vast knowledge and experience of our group for the benefit of the consumer and the cellular market in Israel.<br>
-                    "On behalf of the group of investors and shareholders, senior management and partners in Golan Telecom, we would like to thank the Ministry of Communications and its director, Moshe Kahlon,
-                    for opening the window to a new, fascinating and daring world of communication that will undoubtedly change the Israeli communications world, "We hope that this is the first step to free competition and a significant price reduction for the consumer market."
-                </p>
-                <br>
-                <h4>Oren Most :</h4>
-                <p>"We wake up the next morning, and the world of communications in Israel will not be the same as yesterday." The locomotive began its journey to the destination - a desired change in the communications and cellular maps in Israel for the benefit of consumers and for them.
-                    I am proud to be part of this rare group of entrepreneurs and managers, headed by Michael Golan and Xavier Nir, who have a fantastic record in the establishment and management of ILIAD.<br>
-                    Under the FREE brand, ILIAD provides millions of French people with a generous and varied service package that has caused its competitors to reduce prices by 40% !!!,
-                    In Israel, which was a global pioneer in the mobile personal communications revolution in the mid-1990s, the competition that once characterized the cellular market is lacking. The frequency tender will stimulate and generate competition for the welfare of consumers, the quality of life and the benefit of the economy as a whole.<br>
-                </p>-->
-            </article>
-            <article id="article02" class="modal-content">
-                <!--<h4>Golan Telecom completes all its obligations in advance: <br> it has submitted the bank guarantee to the Ministry of Communications
-                    In the amount of NIS 360 million from Mizrahi Tefahot Bank
-                </h4>-->
-               <!-- <h6>The company has begun recruiting key personnel for the establishment of technology, engineering and information systems infrastructures
-                    and invites candidates to send CVs to HR@golantelecom.co.il
-                </h6>
-                <br>
-                <p>
-                    <b>Golan Telecom completed all its obligations according to the frequencies tender and today submitted to the Minister of Communications, MK Moshe Kahlon, the bank guarantee in the amount of NIS 360 million, at a short ceremony held in his office.</b>
-                </p>
-                <p>
-                    With the delivery of the bank guarantee as required, <b>Golan Telecom</b> is in compliance with all the requirements set by the Ministry of Communications for the tender, initiated by Minister Moshe Kahlon in order to stimulate the cellular market by adding new competitors.
-                    <b>Golan Telecom</b> wishes to thank the Minister of Communications, MK Moshe Kahlon, the Chairman of the Tenders Committee, Dr. Assaf Cohen, and the members of the committee and the professional staff of the Ministry of Communications for the revolutionary move aimed at the benefit of Israeli consumers and their well-being.
-                </p>
-                <p>
-                    <b>The Company is confident that this policy of the Ministry of Communications to enhance competition in the market will continue and will ensure the success of the new competitors. </b>
-                    <br>
-                    <b>Golan Telecom's</b> vision is to bring a cellular consumer revolution to the Israeli market.
-                    The shareholders and managers of the group have already proven their ability in the consumer revolutions that have led and led to the benefit of the media customers in France and Israel.
-                    The core building blocks of <b>Golan Telecom</b> include increased competitiveness, innovative technology, advanced products, quality service and above all a dramatic drop in consumer prices through simple and clear packages to the customer.
-                </p>
-                <p>
-                    <b>The bank guarantee given to the Ministry of Communications today was issued by</b> Mizrahi Tefahot Bank.
-                    Golan Telecom thanks the Bank's management and members of the team who demonstrated professionalism, agility and efficiency while expressing confidence in the future of the Israeli cellular market and Golan Telecom as a new cellular operator.
-                    Thanks also to the other banks, which responded with great speed and service, to the need of Golan Telecom to present a bank guarantee to the Ministry of Communications. These banks will undoubtedly constitute an important element in fulfilling the Bank's banking needs in the future.
-                    Attorney Patrick Ben Zimra and his team represented Golan Telecom in an agreement with Mizrahi Tefahot Bank.
-                    <b>Golan Telecom</b> has begun recruiting key employees in the fields of engineering, technology and information systems to meet the challenge of building Israel's next cellular network. Candidates are invited to send an e-mail to HR@golantelecom.co.il
-                    <br>
-                    Golan Communications thanks all those Israelis who have demonstrated their support in the past few weeks and we will meet them in the market in 2012.
-                </p>-->
-            </article>
-            <article id="article03" class="modal-content">
-      <!--          <h4>Golan Telecom, the new cellular operator, has signed the agreement
-                    An internal roaming agreement with Cellcom
-                </h4>
-                <br><br>
-                <p>
-                    Golan Telecom, the new cellular operator, has signed an internal roaming agreement with <b>Cellcom.</b>
-                    The domestic roaming agreement will enable <b>Golan Telecom</b> customers to enjoy nationwide coverage at the start of the company's operations, planned for 2012.<br><br>
-                    The cooperation between Golan Telecom and Cellcom brings into effect the Ministry of Communications' policy of allowing new cellular operators to enter the reality that the licensing process of new base sites is long and complex, and constitutes a barrier to entry into the market.<br><br>
-                    The agreement signed between the two companies also includes cellular sites, which will enable Golan Telecom, which began to establish an independent national cellular infrastructure, to place its broadcasting cells on existing Cellcom masts throughout the country.<br><br>
-                    The site-sharing agreement is consistent with Golan Telecom's policy to utilize existing masts as much as possible in order to accelerate the construction of its independent infrastructure, while taking into consideration the preservation of the environment as much as possible.
-                    Golan Telecom thanks the members of the Cellcom team for the professionalism and service they have shown throughout the work on the internal roaming agreement.
-                </p>
-                <br><br>
-                <p><b>For additional information: Yinon Harel - Harel-Mordy Integrated marketing communications</b><br><b> 03-6090906 || 0522688111</b></p>
-         -->   </article>
-            <article id="article04" class="modal-content"><!--
-                <h3>The competition has a prefix - 058:</h3>
-                <h4>The Ministry of Communications awarded a prefix to Golan Telecom customers - 058</h4>
-                <br><br>
-                <p>
-                    The Ministry of Communications, which manages the numbering issue, recently announced that 058 is the new prefix in the cellular market. Golan Telecom customers will have numbers in the form of 058 XXX XX XX.
-                    <br>
-                    In the era of number portability, customers who switch from an existing operator to Golan Telecom will be able to do so while saving their original phone number.
-                    <br>
-                    According to various estimates in the communications market, millions of customers have already migrated between the cellular companies and the rate of abandonment for roaming is expected to increase as Golan Telecom enters the market.
-                    During 2012, <b>Golan Telecom</b> will start the revolution for the benefit of the cellular consumer and for him.
-                    <br><br>
-                    Golan Telecom wishes to thank the Ministry of Communications for its speed and efficiency throughout all stages of its work, which helps us reach the starting line in 2012 and change the Israeli communications market for the Israeli consumer with a real revolution.
-                </p>-->
-            </article>
+            <?php
+            $data = selectQuery($connection, $queryArticle);
+
+            if(isset($data)) {
+                getArticles($data);
+            }
+            ?>
         </section>
     </aside>
     <!-- NAV AND MAIN VERSION FOR MOBILE-->

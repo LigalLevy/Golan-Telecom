@@ -83,6 +83,21 @@ ul {
         direction: rtl;
     }
 
+    .delete {
+        position: relative;
+        right: 524px;
+        bottom: 146px;
+        color: red;
+        font-size: 1.8em;
+    }
+
+    .save {
+        position: relative;
+        right: 470px;
+        bottom: 146px;
+        color: green;
+        font-size: 1.8em;
+    }
     .clear {
         clear: both;
     }
@@ -371,6 +386,7 @@ ul {
         margin: auto;
         padding: 20px;
         width: 80%;
+        display: block;
     }
 
     aside article {
@@ -380,6 +396,7 @@ ul {
         z-index: 20;
         padding-top: 46px;
         padding-right: 30px;
+        display: none;
     }
 
     aside h4 {
@@ -388,6 +405,13 @@ ul {
         z-index: 20;
 
     }
+
+    aside h3 {
+        color: #ed1c24;
+        font-size: 1.85em;
+        text-align: center;
+    }
+
     aside p {
         color: #616161;
         font-size: 0.95em;
@@ -415,11 +439,9 @@ ul {
         cursor: pointer;
     }
 
-    #article01 { }
 
-    #article02 { display: none; }
 
-    #article02 h4 , #article04 h4{
+   /* #article02 h4 , #article04 h4{
         font-size: 1.3em;
         text-align: center;
         text-decoration: underline;
@@ -439,12 +461,7 @@ ul {
         width: 650px;
         display: none;
     }
-
-    #article04 h3 {
-        color: #ed1c24;
-        font-size: 1.85em;
-        text-align: center;
-    }
+    */
 
     main {
         width: 100%;

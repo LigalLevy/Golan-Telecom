@@ -11,7 +11,7 @@ $(function() {
 /*NAV SELECTED FUNCTION
 * remarks the selected AREA with class .selected-nav */
 $(function() {
-    $('#nav-list li').onclick(function() {
+    $('#nav-list li').click(function() {
         $('#nav-list li').removeClass('selected-nav');
         $('#nav-list p').removeAttr('id','p-hover');
         $(this).addClass('selected-nav');
@@ -38,7 +38,7 @@ for (i = 0; i < acc.length; i++) {
     });
 }
 
-/*SMOOTH ANIMATE*/
+/*SMOOTH ANIMATE - only for wide screen*/
 $(function(){
     // Add smooth scrolling to all links
     $("a").on('click', function(event) {
@@ -67,33 +67,33 @@ $(function(){
 
 
 /*MODAL ARTICLES*/
+var pickedID = null;
+$('#articles').on("click", "li", function() {
+    pickedID = '0' + this.id;
+
+    modal.style.display = "block";
+    span.style.display = "block";
+
+    var content = document.getElementById(pickedID);
+    content.classList.add("modal-content");
+
+});
+
 // Get the modal
 var modal = document.getElementById('myModal');
 
-// Get the button that opens the modal
-var btn = document.getElementById("myBtn");
-
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks the button, open the modal
-btn.onclick = function() {
-    modal.style.display = "block";
-    span.style.display = "block";
-}
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
     modal.style.display = "none";
     span.style.display = "none";
+
+    $('aside article').removeClass('modal-content');
+
 }
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
 /* END OF MODAL */
 
 
@@ -118,3 +118,31 @@ function fetchJson(fileName){
     });
 }
 
+/*
+$('.save').on("click", function() {
+    var article = $(this).closest('article');
+    var id = article["0"].id;
+    var field = article["0"].children[2].childNodes["0"].data;
+    var job = article["0"].children[4].childNodes["0"].data;
+    var description = article["0"].children[7].childNodes["0"].data;
+    var req = article["0"].children[10].childNodes["0"].data;
+    var lig = $.ajax({
+        type: "POST",
+        url: "try.php",
+        data: {
+                id: id,
+                field: field,
+                job: job,
+                description: description,
+                req: req
+        },
+    });
+    $.post("try.php", {
+        id: id,
+        field: field,
+        job: job,
+        description: description,
+        req: req
+    });
+
+});*/

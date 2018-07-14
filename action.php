@@ -2,15 +2,6 @@
 
     include('db.php');
 
-    /*$html = file_get_contents("index.php");
-    $doc = new DOMDocument(); // create DOMDocument
-    libxml_use_internal_errors(true);
-    $doc->loadHTML($html);*/
-    /* if($html) {
-      // Get the checkbox
-      $checkBox = $doc->getElementById("satisfaction");
-    }*/
-
     $connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 
     //testing connection success
