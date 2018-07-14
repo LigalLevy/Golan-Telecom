@@ -4,6 +4,11 @@
 
     $connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 
+    if(!mysqli_set_charset($connection, 'utf8')) {
+        echo 'the connection is not in utf8';
+        exit();
+    }
+
     //get data from DB
     $query1 = "SELECT * FROM tb_careers1_230 WHERE category='מערכות מידע' AND lang='heb'";
     $query2 = "SELECT * FROM tb_careers1_230 WHERE category='הנדסה' AND lang='heb'";

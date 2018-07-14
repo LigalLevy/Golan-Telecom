@@ -4,6 +4,12 @@ include('db.php');
 
 $connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 
+if(!mysqli_set_charset($connection, 'utf8')) {
+    echo 'the connection is not in utf8';
+    exit();
+}
+
+
 //testing connection success
 if(mysqli_connect_errno()) {
     die("DB connection failed: " . mysqli_connect_error() . " (" . mysqli_connect_errno() . ")"
