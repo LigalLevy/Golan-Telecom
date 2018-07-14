@@ -8,7 +8,6 @@ $connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 $query1 = "SELECT * FROM tb_careers1_230 WHERE category='Information Systems' AND lang='eng'";
 $query2 = "SELECT * FROM tb_careers1_230 WHERE category='Engineering' AND lang='eng'";
 $queryNews = "SELECT header,id FROM `tb_news_230` WHERE lang='eng' ORDER BY id";
-$queryArticle = "SELECT * FROM `tb_news_230` WHERE lang='eng'";
 
 function getCareers($result) {
     $count = 0;
@@ -47,33 +46,12 @@ function getNewsList ($result) {
         //results are in associative array. keys are cols names
         //output data from each row
         echo "<li id=\"" . $row["id"] . "\" >";
-        echo "<a href=\"#0" . $row["id"] ."\" >";
+        echo "<a href=\"#\" >";
         echo $row["header"];
         echo "</a></li>";
     }
 
     echo "</ul>";
-
-    //release returned data
-    mysqli_free_result($result);
-}
-
-function getArticles ($result) {
-    //use return data (if any)
-    while ($row = mysqli_fetch_assoc($result)) {
-        //results are in associative array. keys are cols names
-        //output data from each row
-        echo "<article id=\"0" . $row["id"] . "\"". " >";
-        if(isset($row['extraTitle'])) {
-            echo "<h3>" . $row['extraTitle'] . "</h3>";
-        }
-        echo "<h4>" . $row["title"] . "</h4>";
-        echo $row["text"];
-        if(isset($row['boldFooter'])) {
-            echo $row['boldFooter'];
-        }
-        echo "</article>";
-    }
 
     //release returned data
     mysqli_free_result($result);
@@ -85,8 +63,8 @@ function getArticles ($result) {
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>GolanTelecom-en</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>GolanTelecom-en</title>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik">
     <link rel="stylesheet"  href="includes/admin.css">

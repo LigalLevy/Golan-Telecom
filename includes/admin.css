@@ -99,6 +99,15 @@ ul {
         color: green;
         font-size: 1.8em;
     }
+
+    #en-version .delete {
+        left: 520px;
+    }
+
+    #en-version .save {
+        left: 475px;
+    }
+
     .clear {
         clear: both;
     }
