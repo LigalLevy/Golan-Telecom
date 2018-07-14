@@ -13,7 +13,7 @@
         );
     }
 
-    function selectQuery ($connection , $query) {
+    function makeQuery ($connection , $query) {
         $result = mysqli_query($connection, $query);
         if(!$result) {
             die("DB query failed.");
@@ -21,3 +21,4 @@
 
         return $result;
     }
+

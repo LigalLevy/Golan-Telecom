@@ -87,7 +87,7 @@ ul {
     .delete {
         position: relative;
         right: 524px;
-        bottom: 146px;
+        bottom: 10px;
         color: red;
         font-size: 1.8em;
     }
@@ -95,7 +95,7 @@ ul {
     .save {
         position: relative;
         right: 470px;
-        bottom: 146px;
+        bottom: 10px;
         color: green;
         font-size: 1.8em;
     }
@@ -481,6 +481,10 @@ ul {
         margin-bottom: 75px;
     }
 
+    #en-version #golan-telecom-top h1 {
+        font-size: 1.37em;
+    }
+
     #en-version #golan-telecom-top article p:nth-child(4) {
         left: 155px;
     }
@@ -534,10 +538,6 @@ ul {
 
     #en-version nav {
         right: 10.8%;
-    }
-
-    #en-version #golan-telecom-top h1 {
-        font-size: 1.37em;
     }
 
     #golan-telecom-top article p:nth-child(4){
@@ -724,18 +724,18 @@ ul {
     }
 
 
-    .job span:nth-child(1) {
+    .job span:nth-child(3) {
         color: #262f43;
         font-size: 3.077em;
         margin-left: 20px;
     }
 
-    #en-version .job span:nth-child(1) {
+    #en-version .job span:nth-child(3) {
         margin-right: 20px;
         margin-left: 0;
     }
 
-    .job span:nth-child(2), .job span:nth-child(4) {
+    .job span:nth-child(4), .job span:nth-child(6) {
         position: relative;
         bottom: 18px;
         color: black;
@@ -754,7 +754,7 @@ ul {
         margin-left: 45px;
     }
 
-    #en-version .job span:nth-child(3),#en-version .job span:nth-child(5){
+    #en-version .job span:nth-child(5),#en-version .job span:nth-child(7){
         margin-left: 0px;
         margin-right: 20px;
     }
@@ -763,7 +763,7 @@ ul {
         margin-top: 22px;
     }
 
-    .job span:nth-child(3), .job span:nth-child(5){
+    .job span:nth-child(5), .job span:nth-child(7){
         position: relative;
         bottom: 18px;
         color: #ed1c24;
@@ -908,7 +908,7 @@ ul {
 @media only screen and (max-width: 899px) {
 
     body {
-      width: 360px;
+        width: 360px;
         margin: 0 auto;
     }
 

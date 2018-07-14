@@ -118,31 +118,56 @@ function fetchJson(fileName){
     });
 }
 
-/*
+
 $('.save').on("click", function() {
+    var article = $(this).closest('article');
+    console.log(article);
+
+    var id = article["0"].id;
+    var job = article["0"].children[6].innerHTML;
+    var description = article["0"].children[9].innerHTML;
+    try {
+        var req = article["0"].children[12].innerHTML;
+    }
+    catch (e) {
+        req = " ";
+    }
+    $.ajax({
+        type: "GET",
+        url: "adminQuery.php",
+        data: {
+                exefunction: "update",
+                id: id,
+                job: job,
+                description: description,
+                req: req
+        },
+        success: function(response) {
+            document.location.reload(true);
+        }
+    });
+});
+
+$('.delete').on("click", function() {
     var article = $(this).closest('article');
     var id = article["0"].id;
     var field = article["0"].children[2].childNodes["0"].data;
     var job = article["0"].children[4].childNodes["0"].data;
     var description = article["0"].children[7].childNodes["0"].data;
     var req = article["0"].children[10].childNodes["0"].data;
-    var lig = $.ajax({
-        type: "POST",
-        url: "try.php",
+    $.ajax({
+        type: "GET",
+        url: "adminQuery.php",
         data: {
-                id: id,
-                field: field,
-                job: job,
-                description: description,
-                req: req
+            exefunction: "delete",
+            id: id,
+            field: field,
+            job: job,
+            description: description,
+            req: req
         },
+        success: function(response) {
+            document.location.reload(true);
+        }
     });
-    $.post("try.php", {
-        id: id,
-        field: field,
-        job: job,
-        description: description,
-        req: req
-    });
-
-});*/
+});

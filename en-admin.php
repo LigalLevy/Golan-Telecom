@@ -1,80 +1,83 @@
 <?php
 
-    include('db.php');
+include('db.php');
 
-    $connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
+$connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 
-    //get data from DB
-    $query1 = "SELECT * FROM tb_careers1_230 WHERE category='Information Systems' AND lang='eng'";
-    $query2 = "SELECT * FROM tb_careers1_230 WHERE category='Engineering' AND lang='eng'";
-    $queryNews = "SELECT header,id FROM `tb_news_230` WHERE lang='eng' ORDER BY id";
-    $queryArticle = "SELECT * FROM `tb_news_230` WHERE lang='eng'";
+//get data from DB
+$query1 = "SELECT * FROM tb_careers1_230 WHERE category='Information Systems' AND lang='eng'";
+$query2 = "SELECT * FROM tb_careers1_230 WHERE category='Engineering' AND lang='eng'";
+$queryNews = "SELECT header,id FROM `tb_news_230` WHERE lang='eng' ORDER BY id";
+$queryArticle = "SELECT * FROM `tb_news_230` WHERE lang='eng'";
 
-    function getCareers($result) {
-        $count = 0;
+function getCareers($result) {
+    $count = 0;
 
-        //use return data (if any)
-        while($row = mysqli_fetch_assoc($result)) {
-            //results are in associative array. keys are cols names
-            //output data from each row
-            $count++;
-            echo "<article class=\"job\"" . " id=\"" . $row["id"] . "\">";
-            echo "<span>" . $count . "</span>";
-            echo "<span>" . "Job category | " . "</span>" . "<span>" . $row["category"] . "</span>";
-            echo "<span>" . "Job title | " . "</span>" . "<span>" . $row["title"] . "</span>";
-            echo "<br>";
-            if ($row["responsibilities"] != null) {
-                echo "<span class=\"job-desc\">Responsibilities | </span>";
-                echo "<p class=\"job-desc-val\">" . $row["responsibilities"] . "</p><br>";
-            }
-            echo "<span class=\"job-desc\">Qualifications | </span>";
-            echo "<p class=\"job-desc-val\">" . $row["qualifications"] . "</p>";
-            echo "</article>";
+    //use return data (if any)
+    while($row = mysqli_fetch_assoc($result)) {
+        //results are in associative array. keys are cols names
+        //output data from each row
+        $count++;
+        echo "<article class=\"job\"" . " id=\"" . $row["id"] . "\">";
+        echo "<i class='fas fa-trash-alt delete'></i>";
+        echo "<i class='fas fa-save save'></i>";
+        echo "<span>" . $count . "</span>";
+        echo "<span>" . "Job category | " . "</span>" . "<span>" . $row["category"] . "</span>";
+        echo "<span>" . "Job title | " . "</span>" . "<span contenteditable='true'>" . $row["title"] . "</span>";
+        echo "<br>";
+        if ($row["responsibilities"] != null) {
+            echo "<span class=\"job-desc\">Responsibilities | </span>";
+            echo "<p class=\"job-desc-val\" contenteditable='true'>" . $row["responsibilities"] . "</p><br>";
         }
+        echo "<span class=\"job-desc\">Qualifications | </span>";
+        echo "<p class=\"job-desc-val\" contenteditable='true'>" . $row["qualifications"] . "</p>";
+        echo "</article>";
 
-        //release returned data
-        mysqli_free_result($result);
     }
 
-    function getNewsList ($result) {
-        echo "<ul id=\"articles\">";
+    //release returned data
+    mysqli_free_result($result);
+}
 
-        //use return data (if any)
-        while ($row = mysqli_fetch_assoc($result)) {
-            //results are in associative array. keys are cols names
-            //output data from each row
-            echo "<li id=\"" . $row["id"] . "\" >";
-            echo "<a href=\"#0" . $row["id"] ."\" >";
-            echo $row["header"];
-            echo "</a></li>";
-        }
+function getNewsList ($result) {
+    echo "<ul id=\"articles\">";
 
-        echo "</ul>";
-
-        //release returned data
-        mysqli_free_result($result);
+    //use return data (if any)
+    while ($row = mysqli_fetch_assoc($result)) {
+        //results are in associative array. keys are cols names
+        //output data from each row
+        echo "<li id=\"" . $row["id"] . "\" >";
+        echo "<a href=\"#0" . $row["id"] ."\" >";
+        echo $row["header"];
+        echo "</a></li>";
     }
 
-    function getArticles ($result) {
-        //use return data (if any)
-        while ($row = mysqli_fetch_assoc($result)) {
-            //results are in associative array. keys are cols names
-            //output data from each row
-            echo "<article id=\"0" . $row["id"] . "\"". " >";
-            if(isset($row['extraTitle'])) {
-                echo "<h3>" . $row['extraTitle'] . "</h3>";
-            }
-            echo "<h4>" . $row["title"] . "</h4>";
-            echo $row["text"];
-            if(isset($row['boldFooter'])) {
-                echo $row['boldFooter'];
-            }
-            echo "</article>";
-        }
+    echo "</ul>";
 
-        //release returned data
-        mysqli_free_result($result);
+    //release returned data
+    mysqli_free_result($result);
+}
+
+function getArticles ($result) {
+    //use return data (if any)
+    while ($row = mysqli_fetch_assoc($result)) {
+        //results are in associative array. keys are cols names
+        //output data from each row
+        echo "<article id=\"0" . $row["id"] . "\"". " >";
+        if(isset($row['extraTitle'])) {
+            echo "<h3>" . $row['extraTitle'] . "</h3>";
+        }
+        echo "<h4>" . $row["title"] . "</h4>";
+        echo $row["text"];
+        if(isset($row['boldFooter'])) {
+            echo $row['boldFooter'];
+        }
+        echo "</article>";
     }
+
+    //release returned data
+    mysqli_free_result($result);
+}
 
 ?>
 
@@ -84,17 +87,18 @@
     <meta charset="UTF-8">
     <title>GolanTelecom-en</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
-    <link rel="stylesheet"  href="includes/style.css">
-    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
-    <script src="includes/scripts.js"></script>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik">
+    <link rel="stylesheet"  href="includes/admin.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
 <div id="en-version" class="wrapper">
     <header>
         <a class="logo" href="#"></a>
         <a class="lang" href="index.php"><b>עברית</b></a>
-        <a class="admin" href="en-admin.php"><b>Admin</b></a>
+        <a class="admin" href="en-index.php"><b>Visitor</b></a>
     </header>
     <section id="golan-telecom-top">
         <h1>Golan Telecom,new player in the cellular world</h1>
@@ -120,28 +124,11 @@
     </nav>
     <span class="boundary-line"></span>
     <div class="clear"></div>
-    <aside>
-        <h5>Updates and RSS</h5>
-        <span></span>
-        <h5>From the newspaper</h5>
-        <?php
-        $data = makeQuery($connection, $queryNews);
 
-        if(isset($data)) {
-            getNewsList($data);
-        }
-        ?>
         <span class="close"></span>
         <section id="myModal" class="modal">
-            <?php
-            $data = makeQuery($connection, $queryArticle);
-
-            if(isset($data)) {
-                getArticles($data);
-            }
-            ?>
         </section>
-    </aside>
+
     <!-- NAV AND MAIN VERSION FOR MOBILE-->
     <nav id="nav-mobile">
         <button class="nav-list-mobile" ><p></p><a href="#who-are-we-mobile">Who we are?</a></button>

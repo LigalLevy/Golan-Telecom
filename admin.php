@@ -8,7 +8,6 @@
     $query1 = "SELECT * FROM tb_careers1_230 WHERE category='מערכות מידע' AND lang='heb'";
     $query2 = "SELECT * FROM tb_careers1_230 WHERE category='הנדסה' AND lang='heb'";
     $queryNews = "SELECT header,id FROM `tb_news_230` WHERE lang='heb' ORDER BY id";
-    $queryArticle = "SELECT * FROM `tb_news_230` WHERE lang='heb'";
 
     function getCareers($result) {
         $count = 0;
@@ -19,16 +18,18 @@
             //output data from each row
             $count++;
             echo "<article class=\"job\"" . " id=\"" . $row["id"] . "\">";
+            echo "<i class='fas fa-trash-alt delete'></i>";
+            echo "<i class='fas fa-save save'></i>";
             echo "<span>" . $count . "</span>";
             echo "<span>" . "תחום | " . "</span>" . "<span>" . $row["category"] . "</span>";
-            echo "<span>" . "התפקיד | " . "</span>" . "<span>" . $row["title"] . "</span>";
+            echo "<span>" . "התפקיד | " . "</span>" . "<span contenteditable='true'>" . $row["title"] . "</span>";
             echo "<br>";
             if ($row["responsibilities"] != null) {
                 echo "<span class=\"job-desc\">תיאור | </span>";
-                echo "<p class=\"job-desc-val\">" . $row["responsibilities"] . "</p><br>";
+                echo "<p contenteditable='true' class=\"job-desc-val\">" . $row["responsibilities"] . "</p><br>";
             }
             echo "<span class=\"job-desc\">דרישות | </span>";
-            echo "<p class=\"job-desc-val\">" . $row["qualifications"] . "</p>";
+            echo "<p contenteditable='true' class=\"job-desc-val\">" . $row["qualifications"] . "</p>";
             echo "</article>";
         }
 
@@ -44,7 +45,7 @@
             //results are in associative array. keys are cols names
             //output data from each row
             echo "<li id=\"" . $row["id"] . "\" >";
-            echo "<a href=\"#0" . $row["id"] ."\" >";
+            echo "<a href=\"#\" >";
             echo $row["header"];
             echo "</a></li>";
         }
@@ -55,26 +56,6 @@
         mysqli_free_result($result);
     }
 
-    function getArticles ($result) {
-        //use return data (if any)
-        while ($row = mysqli_fetch_assoc($result)) {
-            //results are in associative array. keys are cols names
-            //output data from each row
-            echo "<article id=\"0" . $row["id"] . "\"". " >";
-            if(isset($row['extraTitle'])) {
-                echo "<h3>" . $row['extraTitle'] . "</h3>";
-            }
-            echo "<h4>" . $row["title"] . "</h4>";
-            echo $row["text"];
-            if(isset($row['boldFooter'])) {
-                echo $row['boldFooter'];
-            }
-            echo "</article>";
-        }
-
-        //release returned data
-        mysqli_free_result($result);
-    }
 
 ?>
 <!DOCTYPE html>
@@ -83,8 +64,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Golan Telecom</title>
+
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik">
-    <link rel="stylesheet"  href="includes/style.css">
+    <link rel="stylesheet"  href="includes/admin.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
@@ -92,7 +75,7 @@
     <header>
         <a class="logo" href="#"></a>
         <a class="lang" href="en-index.php"><b>English</b></a>
-        <a class="admin" href="admin.php"><b>מנהל</b></a>
+        <a class="admin" href="index.php"><b>מבקר</b></a>
     </header>
     <section id="golan-telecom-top">
         <h1>גולן טלקום, השחקן החדש בעולם הסלולר</h1>
@@ -119,28 +102,9 @@
     </nav>
     <span class="boundary-line"></span>
     <div class="clear"></div>
-    <aside>
-        <h5>RSS ועדכונים</h5>
-        <span></span>
-        <h5>מהעיתונות</h5>
-        <?php
-            $data = makeQuery($connection, $queryNews);
-
-            if(isset($data)) {
-                getNewsList($data);
-            }
-        ?>
-        <span class="close"></span>
-        <section id="myModal" class="modal">
-            <?php
-            $data = makeQuery($connection, $queryArticle);
-
-            if(isset($data)) {
-                getArticles($data);
-            }
-            ?>
-        </section>
-    </aside>
+    <span class="close"></span>
+    <section id="myModal" class="modal">
+    </section>
     <!-- NAV AND MAIN VERSION FOR MOBILE-->
     <nav id="nav-mobile">
         <button class="nav-list-mobile" ><p></p><a href="#who-are-we-mobile">מי אנחנו?</a></button>
