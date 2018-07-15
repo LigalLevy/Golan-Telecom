@@ -218,7 +218,7 @@
                     stating the job title: <b>hr@gt.co.il</b>
                     We apologize in advance for the length of the process due to multiple requests to join the team.
                 </p>
-                <div class="clear"></div>
+                <span class="red-line"></span>
                 <h4>our open positions</h4>
             </article>
             <?php
